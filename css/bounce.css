@@ -24,10 +24,10 @@
 
 /* Animation for image */
 .dropi.animate {
-  animation: dropBounce 1s ease-out forwards;
+  animation: dropBounce 1.5s ease-out forwards;
 }
 
 /* Animation for text */
 .dropt.animate {
-  animation: dropBounce 1.2s ease-out forwards;
+  animation: dropBounce 2.5s ease-out forwards;
 }
