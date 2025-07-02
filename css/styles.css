@@ -184,3 +184,38 @@ body {
 }
 
 
+
+/* image aur Ashwin text ka animation ka css */
+
+
+@keyframes dropBounce {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dropi, .dropt {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Optional: for smooth transition after animation */
+.dropi {
+  animation: dropBounce 1s ease-out 0.3s forwards;
+}
+
+.dropt {
+  animation: dropBounce 1.2s ease-out 0.6s forwards;
+}
+
