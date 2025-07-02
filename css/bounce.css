@@ -1,0 +1,33 @@
+
+@keyframes dropBounce {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dropi, .dropt {
+  opacity: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Animation for image */
+.dropi.animate {
+  animation: dropBounce 1s ease-out forwards;
+}
+
+/* Animation for text */
+.dropt.animate {
+  animation: dropBounce 1.2s ease-out forwards;
+}
