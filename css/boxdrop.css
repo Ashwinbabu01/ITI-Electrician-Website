@@ -1,0 +1,10 @@
+.box {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-out;
+}
+
+.box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
