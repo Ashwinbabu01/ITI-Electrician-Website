@@ -29,5 +29,5 @@
 
 /* Animation for text */
 .dropt.animate {
-  animation: dropBounce 3s ease-out forwards;
+  animation: dropBounce 1.7s ease-out forwards;
 }
