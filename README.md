@@ -1,2 +1,2 @@
-# Programing-school
+# ITI electrician website 
 Educational website 
