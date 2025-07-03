@@ -93,3 +93,6 @@
   .feature-grid { flex-direction: column; align-items: center; }
   .feature.box { min-width: 80vw; }
 }
+.bodyg{
+  width:100%;
+}
