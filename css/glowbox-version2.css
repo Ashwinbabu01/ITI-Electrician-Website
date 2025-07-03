@@ -1,0 +1,95 @@
+.feature-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature.box {
+  background: linear-gradient(135deg, #232949 60%, #2a3552 100%);
+  color: #eaf1fb;
+  border-radius: 20px;
+  box-shadow:
+    0 1px 10px 0 rgba(50, 120, 255, 0.10),
+    0 0 0 0 #5eead4;
+  padding: 2.2rem 1.8rem;
+  min-width: 220px;
+  min-height: 140px;
+  font-size: 1.28rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition:
+    transform 0.38s cubic-bezier(.17,.67,.83,.67),
+    box-shadow 0.4s cubic-bezier(.17,.67,.83,.67),
+    background 0.28s;
+  z-index: 1;
+  border: 1.5px solid transparent;
+}
+
+.feature.box::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -4px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, #5eead4 20%, #818cf8 80%);
+  filter: blur(18px);
+  opacity: 0.14;
+  transition: opacity 0.4s;
+}
+
+.feature.box.reveal-effect {
+  transform: scale(1.045) translateY(-10px);
+  box-shadow:
+    0 8px 40px 0 rgba(94,234,212,0.22),
+    0 2px 34px 0 rgba(129,140,248,0.13);
+  border: 1.5px solid #5eead4;
+}
+
+.feature.box.reveal-effect::before {
+  opacity: 0.34;
+}
+
+.feature.box:hover, .feature.box:focus-visible {
+  box-shadow:
+    0 12px 48px 0 rgba(94,234,212,0.24),
+    0 4px 48px 0 rgba(129,140,248,0.19);
+  background: linear-gradient(135deg, #25355a 60%, #20274e 100%);
+  border: 1.5px solid #818cf8;
+}
+
+.feature.box:hover::before, .feature.box:focus-visible::before {
+  opacity: 0.6;
+}
+
+.feature.box:active {
+  transform: scale(0.97);
+}
+
+.feature.box .box-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  transition: max-height 0.6s cubic-bezier(.16,.81,.57,1.02), opacity 0.5s, padding-top 0.3s;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #d3f0f7;
+}
+
+.feature.box.expanded .box-content {
+  max-height: 270px;
+  opacity: 1;
+  padding-top: 1.2rem;
+}
+
+.feature.box1 { border-top: 3.5px solid #5eead4; }
+.feature.box2 { border-top: 3.5px solid #818cf8; }
+.feature.box3 { border-top: 3.5px solid #f9e076; }
+
+@media (max-width: 700px) {
+  .feature-grid { flex-direction: column; align-items: center; }
+  .feature.box { min-width: 80vw; }
+}
