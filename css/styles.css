@@ -21,6 +21,8 @@ body {
 .hero-section {
   background-color: #dce8ff;
   padding: 40px 0;
+  width:100%;
+  
 }
 
 .hero-section .container {
