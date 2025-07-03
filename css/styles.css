@@ -35,6 +35,9 @@ body {
 .hero-text h1 {
   font-size: 2em;
   color: #222;
+  margin-top:0px;
+  padding-top: 0px;
+  
 }
 
 .highlight {
