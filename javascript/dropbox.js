@@ -39,7 +39,7 @@ function animateFeatureBoxes() {
 
     setTimeout(() => {
       box.classList.add('visible');
-      box.style.transitionDelay = `${i * 0.25 + 0.2}s`; // stagger and initial delay
+      box.style.transitionDelay = `${i * 0.25 }s`; // stagger and initial delay
       box.style.transform = '';
       box.style.opacity = '';
     }, 120); // small timeout to ensure position is set before animating
