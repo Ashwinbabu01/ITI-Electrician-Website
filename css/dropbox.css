@@ -1,3 +1,11 @@
+.feature.box {
+  transition: transform 0.7s cubic-bezier(.19,1,.22,1), opacity 0.5s;
+  will-change: transform, opacity;
+  /* Optionally add glassmorphism here! */
+}
+.feature.box.visible {
+  /* No extra styles needed unless you want more effects */
+}
 .feature-grid {
   display: flex;
   gap: 2rem;
