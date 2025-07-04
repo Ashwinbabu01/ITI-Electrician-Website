@@ -58,7 +58,7 @@
   border-left: 5px solid #a6ffcb;
 }
 .features-section {
-  min-height: 150vh; /* Section is now 150% of viewport height */
+  min-height: 200vh; /* Section is now 150% of viewport height */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
