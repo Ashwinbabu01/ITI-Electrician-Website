@@ -1,7 +1,13 @@
-// Scroll direction aware falling/rising animation for feature boxes
-
 let lastScrollY = window.scrollY;
+let scrollDirection = 'down';
 const animatedMap = new Map(); // box => {down:bool, up:bool}
+
+// Listen for scroll and update scrollDirection globally
+window.addEventListener('scroll', () => {
+  const curr = window.scrollY;
+  scrollDirection = curr > lastScrollY ? 'down' : (curr < lastScrollY ? 'up' : scrollDirection);
+  lastScrollY = curr;
+}, { passive: true });
 
 function getHeadingY() {
   const heading = document.querySelector('.target-text');
@@ -15,6 +21,7 @@ function getFooterY() {
   const rect = footer.getBoundingClientRect();
   return rect.top + window.scrollY;
 }
+
 function animateBox(box, direction, headingY, footerY) {
   if (!animatedMap.has(box)) animatedMap.set(box, { down: false, up: false });
   const state = animatedMap.get(box);
@@ -22,20 +29,19 @@ function animateBox(box, direction, headingY, footerY) {
   // Prevent repeat animation for same direction
   if ((direction === 'down' && state.down) || (direction === 'up' && state.up)) return;
 
-  // Initial state
   let offsetY = 0;
   if (direction === 'down') {
     // Falling from heading
     const boxRect = box.getBoundingClientRect();
     const boxY = boxRect.top + window.scrollY;
     offsetY = boxY - headingY - 48;
-    box.style.transform = `translateY(${-offsetY}px) scale(0.95)`;
+    box.style.transform = `translateY(${-offsetY}px) scale(0.97)`;
   } else {
     // Rising from footer
     const boxRect = box.getBoundingClientRect();
     const boxY = boxRect.top + window.scrollY;
     offsetY = (footerY - boxY) + 48;
-    box.style.transform = `translateY(${offsetY}px) scale(0.95)`;
+    box.style.transform = `translateY(${offsetY}px) scale(0.97)`;
   }
   box.style.opacity = '0';
   box.style.transition = 'none';
@@ -43,8 +49,8 @@ function animateBox(box, direction, headingY, footerY) {
   // Force reflow
   void box.offsetWidth;
 
-  // Animate to normal position
-  box.style.transition = 'transform 0.7s cubic-bezier(.19,1,.22,1), opacity 0.5s';
+  // Animate to normal position, use a natural cubic-bezier
+  box.style.transition = 'transform 0.65s cubic-bezier(.23,1.12,.56,1.01), opacity 0.5s';
   setTimeout(() => {
     box.classList.add('visible');
     box.style.transitionDelay = '0s';
@@ -52,30 +58,19 @@ function animateBox(box, direction, headingY, footerY) {
     box.style.opacity = '';
     if (direction === 'down') state.down = true;
     if (direction === 'up') state.up = true;
-  }, 120);
+  }, 16); // 1 frame delay
 }
 
-// Detect scroll direction
-function getScrollDirection() {
-  const curr = window.scrollY;
-  let dir = 'down';
-  if (curr < lastScrollY) dir = 'up';
-  lastScrollY = curr;
-  return dir;
-}
-
-function handleBoxEntry(entry, observer) {
-  const direction = getScrollDirection();
+function handleBoxEntry(entry) {
   const headingY = getHeadingY();
   const footerY = getFooterY();
   if (entry.isIntersecting) {
-    animateBox(entry.target, direction, headingY, footerY);
+    animateBox(entry.target, scrollDirection, headingY, footerY);
   }
 }
 
 // IntersectionObserver setup
 function setupFeatureBoxAdvanced() {
-  // Center alignment for box content
   document.querySelectorAll('.feature.box').forEach(box => {
     box.style.display = 'flex';
     box.style.justifyContent = 'center';
@@ -85,15 +80,12 @@ function setupFeatureBoxAdvanced() {
     animatedMap.set(box, { down: false, up: false });
   });
 
-  // Make observer fire when 60% of box is in view
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => handleBoxEntry(entry, observer));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => handleBoxEntry(entry));
   }, { threshold: 0.6 });
 
   document.querySelectorAll('.feature.box').forEach(box => observer.observe(box));
 }
 
 window.addEventListener('DOMContentLoaded', setupFeatureBoxAdvanced);
-window.addEventListener('resize', setupFeatureBoxAdvanced); // Optional: rebind on resize
-
-// For accessibility: If you want to reset animation on page reload, clear .visible and animatedMap
+window.addEventListener('resize', setupFeatureBoxAdvanced);
