@@ -52,7 +52,7 @@ function animateBox(box, direction, headingY, footerY) {
     box.style.opacity = '';
     if (direction === 'down') state.down = true;
     if (direction === 'up') state.up = true;
-  }, 20);
+  }, 120);
 }
 
 // Detect scroll direction
