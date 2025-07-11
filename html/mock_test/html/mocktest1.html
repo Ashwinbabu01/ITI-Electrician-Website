@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>ITI इलेक्ट्रीशियन Futuristic Mock Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Futuristic, comfortable color palette -->
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0f7fa 0%, #f3e5f5 100%);
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, #7b1fa2 0%, #1976d2 100%);
+            color: white;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 2px 8px rgba(60,60,100,0.16);
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: rgba(255,255,255,0.96);
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(60,60,100,0.11);
+            padding: 2rem;
+        }
+        .question-block {
+            margin-bottom: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 18px;
+            background: #f8f9fa;
+            box-shadow: 0 1px 6px rgba(80,80,80,0.04);
+            transition: background 0.3s;
+        }
+        .question-block.active {
+            background: #e3f2fd;
+        }
+        .question {
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .options label {
+            display: block;
+            background: #ede7f6;
+            margin-bottom: 0.6rem;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border: 2px solid transparent;
+        }
+        .options input[type="radio"]:checked + label {
+            background: #bbdefb;
+            color: #1a237e;
+            border: 2px solid #7b1fa2;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        #submit-btn {
+            background: linear-gradient(90deg, #1976d2 0%, #7b1fa2 100%);
+            color: white;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 15px;
+            padding: 0.9rem 2.5rem;
+            margin: 2rem auto 0 auto;
+            display: block;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(60,60,100,0.20);
+            transition: background 0.25s, transform 0.18s;
+        }
+        #submit-btn:hover {
+            background: linear-gradient(90deg, #7b1fa2 0%, #1976d2 100%);
+            transform: scale(1.04);
+        }
+        #result-section {
+            text-align: center;
+            padding: 2rem;
+            background: #e1bee7;
+            border-radius: 22px;
+            box-shadow: 0 2px 12px rgba(80,80,120,0.10);
+            margin-top: 2rem;
+            display: none;
+        }
+        #score {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #7b1fa2;
+        }
+        .remark {
+            font-size: 1.15rem;
+            margin-top: 1rem;
+            color: #1976d2;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 0.5rem;}
+            .question-block { padding: 0.5rem;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ITI इलेक्ट्रीशियन: सुरक्षा और प्राथमिक चिकित्सा<br>  Mock Test</h1>
+        <p>50 MCQs | Hindi | Easy to Hard</p>
+    </header>
+    <div class="container">
+        <form id="mockTestForm">
+            <!-- Questions will be dynamically inserted here -->
+        </form>
+        <button id="submit-btn">सबमिट करें</button>
+        <div id="result-section">
+            <div id="score"></div>
+            <div class="remark"></div>
+            <div id="answers-summary"></div>
+        </div>
+    </div>
+    <script src="mocktest.js"></script>
+</body>
+</html>
