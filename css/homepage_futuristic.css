@@ -284,6 +284,3 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px;}
 ::selection { background: #4fd0e833; }
 
-.box1{
-  text-color:white;
-}
