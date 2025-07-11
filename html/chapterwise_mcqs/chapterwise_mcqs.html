@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -6,79 +5,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITI Electrician First Year - High Scoring Chapters</title>
   <style>
-    a {
-      text-decoration: none;
-      color: inherit;
+    /* Futuristic Space Theme Palette */
+    :root {
+      --bg-gradient: radial-gradient(ellipse at top left, #23244e 0%, #181828 100%);
+      --card-gradient: linear-gradient(135deg, #23244e 20%, #242c45 100%);
+      --accent: #4fd0e8;
+      --accent2: #b6e1ff;
+      --neon: #38e8fc;
+      --subject-bg: #232c4a;
+      --subject-border: #4fd0e8;
+      --shadow: 0 4px 38px 0 rgba(56,232,252,0.13), 0 2px 4px rgba(0,0,0,0.08);
+      --border-radius: 20px;
+      --font-main: 'Segoe UI', 'Noto Sans', Arial, Helvetica, sans-serif;
+      --heading: #b6e1ff;
+      --subheading: #4fd0e8;
+      --text: #e3f5fd;
+      --subject-text: #fff;
+      --subject-highlight: #181828;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f9fc;
       margin: 0;
+      font-family: var(--font-main);
+      background: var(--bg-gradient);
+      color: var(--text);
+      min-height: 100vh;
+      letter-spacing: 0.01em;
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Space Animation */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+      left: 0; top: 0;
+      background: url('https://svgshare.com/i/13r8.svg') repeat;
+      opacity: 0.08;
+      animation: starsMove 60s linear infinite;
+    }
+    body::after {
+      opacity: 0.12;
+      background: url('https://svgshare.com/i/13r9.svg') repeat;
+      animation: starsMove2 120s linear infinite;
+    }
+    @keyframes starsMove {
+      to {background-position: 1000px 1000px;}
+    }
+    @keyframes starsMove2 {
+      to {background-position: -800px -800px;}
     }
     header {
-      background-color: #2b6777;
+      background: linear-gradient(90deg, #23244e 50%, #4fd0e8 100%);
       color: #fff;
       text-align: center;
-      padding: 25px 10px;
+      padding: 2.5rem 0 1.2rem 0;
+      box-shadow: var(--shadow);
+      border-bottom-left-radius: 48px;
+      border-bottom-right-radius: 48px;
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--heading);
+      text-shadow: 0 0 18px #4fd0e880, 0 0 4px #181828;
     }
     header p {
-      margin: 4px 0 0;
-      font-size: 18px;
+      margin-top: .6rem;
+      font-size: 1.18rem;
+      font-weight: 400;
+      color: var(--subheading);
+      opacity: 0.96;
+      text-shadow: 0 0 6px #4fd0e844;
     }
     .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 930px;
+      margin: 2.3rem auto;
+      background: var(--card-gradient);
+      padding: 2.5rem 2rem 2rem 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      z-index: 2;
+      position: relative;
+      border: 2px solid #232c4a;
     }
     h2 {
-      color: #2b6777;
-      border-bottom: 2px solid #c8d8e4;
-      padding-bottom: 6px;
-      margin-top: 30px;
+      background: var(--subject-bg);
+      color: var(--accent2);
+      border-left: 8px solid var(--accent);
+      border-radius: 14px;
+      padding: .8rem 1.1rem;
+      margin-top: 2.2rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.45rem;
+      box-shadow: 0 2px 16px #38e8fc22;
+      letter-spacing: .3px;
+      position: relative;
+      z-index: 2;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 50px; height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      opacity: .85;
+      box-shadow: 0 0 12px #4fd0e855;
     }
     ol {
-      font-size: 18px;
+      font-size: 1.09rem;
       line-height: 1.8;
-      padding-left: 20px;
+      padding-left: 35px;
+      margin-bottom: 0;
+      z-index: 2;
+      position: relative;
     }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #2b6777;
+    ol li {
+      margin-bottom: .7rem;
+      background: #232c4a90;
+      color: var(--subject-text);
+      border-left: 5px solid var(--accent);
+      border-radius: 11px;
+      padding: .57rem 1rem .57rem 1.2rem;
+      box-shadow: 0 2px 8px #4fd0e81c;
+      transition: background 0.2s, border-color 0.2s;
+      position: relative;
+      cursor: pointer;
+    }
+    ol li:hover, ol a:hover li {
+      background: #4fd0e819;
+      border-color: var(--neon);
+      color: var(--neon);
+    }
+    ol a {
+      display: block;
+    }
+    .subject-link {
+      font-weight: bold;
+      color: var(--neon);
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: inherit;
+      transition: color .2s;
+    }
+    .subject-link:hover {
       color: #fff;
+      text-shadow: 0 0 14px var(--neon);
     }
     .download-btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 12px 24px;
-      background: #52ab98;
+      margin-top: 2.5rem;
+      padding: 14px 30px;
+      background: linear-gradient(90deg, #4fd0e8 20%, #23244e 100%);
       color: #fff;
       text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s ease;
+      border-radius: 10px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 2px 8px #4fd0e844;
+      letter-spacing: .4px;
+      transition: background 0.3s, color 0.3s;
+      position: relative;
+      z-index: 2;
     }
     .download-btn:hover {
-      background: #3b8b78;
+      background: linear-gradient(90deg, #23244e 20%, #4fd0e8 100%);
+      color: var(--accent2);
+      box-shadow: 0 4px 16px #4fd0e866;
     }
+    footer {
+      text-align: center;
+      margin-top: 45px;
+      padding: 20px;
+      background: linear-gradient(90deg, #23244e 30%, #181828 100%);
+      color: var(--accent2);
+      font-size: 1rem;
+      border-top-left-radius: 32px;
+      border-top-right-radius: 32px;
+      letter-spacing: 1px;
+      box-shadow: 0 -2px 12px #38e8fc22;
+      z-index: 1;
+      position: relative;
+    }
+    @media (max-width: 650px) {
+      header h1 { font-size: 1.1rem;}
+      header p { font-size: 1rem;}
+      .container { padding: 1.2rem .6rem;}
+      h2 { font-size: 1.09rem; padding: .5rem .7rem;}
+      ol { font-size: .99rem; padding-left: 18px;}
+      ol li { padding: .31rem .7rem .31rem .8rem;}
+      .download-btn { font-size: 1rem; padding: 10px 15px;}
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 10px; background: #232c4a;}
+    ::-webkit-scrollbar-thumb { background: #4fd0e8; border-radius: 8px;}
+    ::selection { background: #4fd0e833;}
   </style>
 </head>
 <body>
   <header>
-    <h1>आईटीआई इलेक्ट्रीशियन ट्रेड – प्रथम वर्ष</h1>
-    <p>High Scoring Chapters (अधिक अंक दिलाने वाले अध्याय)</p>
+    <h1>🌌 आईटीआई इलेक्ट्रीशियन ट्रेड – प्रथम वर्ष</h1>
+    <p>🚀 High Scoring Chapters (अधिक अंक दिलाने वाले अध्याय)</p>
   </header>
   <div class="container">
-    <h2>सेमेस्टर 1 – Basic Electrical Training</h2>
+    <h2>सेमेस्टर 1 – <span class="subject-link">Basic Electrical Training</span></h2>
     <ol>
-     <a href= "html/m1.html" > <li>Safety & First Aid (सुरक्षा एवं प्राथमिक उपचार)</li></a>
+      <a href="html/m1.html" class="subject-link"><li>Safety & First Aid (सुरक्षा एवं प्राथमिक उपचार)</li></a>
       <li>Basics of Electricity – Current, Voltage, Resistance (विद्युत के मूल तत्व)</li>
       <li>Electrical Symbols, Units & SI System</li>
       <li>Hand Tools & Measuring Instruments (उपकरण एवं मापक यंत्र)</li>
@@ -88,7 +229,7 @@
       <li>Wire Jointing Techniques & Basic Wiring (सतही व कॉन्डिट वायरिंग)</li>
     </ol>
 
-    <h2>सेमेस्टर 2 – AC Fundamentals & Transformers</h2>
+    <h2>सेमेस्टर 2 – <span class="subject-link">AC Fundamentals & Transformers</span></h2>
     <ol start="9">
       <li>Magnetism & Electromagnetic Induction</li>
       <li>AC Fundamentals – Cycle, Frequency, RMS & Power Factor</li>
@@ -105,6 +246,8 @@
     </a>
   </div>
 
-  <footer>© 2025 ITI Study Resource | Designed by Ashwin Chauhan</footer>
+  <footer>
+    © 2025 ITI Study Resource | Designed by Ashwin Chauhan | 🌠 Futuristic Space Theme
+  </footer>
 </body>
 </html>
