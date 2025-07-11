@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety & First Aid – Top 50 MCQs (हिंदी)</title>
+    <style>
+        /* Futuristic Color Palette */
+        :root {
+            --primary-bg: #181828;
+            --secondary-bg: #23234a;
+            --gradient: linear-gradient(90deg, #4f8cff 0%, #38e8fc 100%);
+            --card-gradient: linear-gradient(135deg, #202040 55%, #2fa8ff 100%);
+            --accent: #38e8fc;
+            --heading: #4f8cff;
+            --answer-bg: #23234a;
+            --answer-text: #38e8fc;
+            --question-text: #f6f6f6;
+            --section-title-bg: #23234a;
+            --section-title-border: #38e8fc;
+            --shadow: 0 4px 28px 0 rgba(56,232,252,0.10), 0 2px 4px rgba(0,0,0,0.13);
+            --border-radius: 18px;
+            --font-main: 'Segoe UI', 'Noto Sans', Arial, Helvetica, sans-serif;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background: var(--primary-bg);
+            color: var(--question-text);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+        header {
+            background: var(--gradient);
+            color: #fff;
+            padding: 2.5rem 0 1.4rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px #38e8fc80;
+        }
+        header p {
+            margin-top: .7rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.96;
+            text-shadow: 0 0 6px #4f8cff44;
+        }
+        main {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 2.7rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--heading);
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            background: var(--section-title-bg);
+            padding: .8rem 1.2rem;
+            border-left: 6px solid var(--section-title-border);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 16px #38e8fc22;
+            position: relative;
+            letter-spacing: .6px;
+        }
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            opacity: .85;
+            box-shadow: 0 0 12px #38e8fc55;
+        }
+        .mcq-list {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.3rem 1.7rem 1.4rem 1.7rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #38e8fc18;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            animation: fadeInCard 0.7s;
+        }
+        @keyframes fadeInCard {
+            0% { opacity: 0; transform: translateY(40px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .mcq {
+            margin-bottom: .6rem;
+            padding: .7rem 1.1rem .7rem .7rem;
+            background: #23234a77;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px #38e8fc14;
+            transition: background 0.2s;
+        }
+        .mcq:hover {
+            background: #38e8fc19;
+        }
+        .mcq .question {
+            font-weight: 500;
+            color: var(--question-text);
+            margin-bottom: .18rem;
+            font-size: 1.08rem;
+            letter-spacing: .2px;
+        }
+        .mcq .answer {
+            display: inline-block;
+            background: var(--answer-bg);
+            color: var(--answer-text);
+            font-weight: 700;
+            padding: .27rem 1.2rem .27rem 1.2rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            margin-top: .08rem;
+            box-shadow: 0 2px 10px #38e8fc18;
+            border: 1.5px solid var(--accent);
+            text-shadow: 0 0 8px #38e8fc44;
+        }
+        /* Futuristic neon effect for answers */
+        .mcq .answer {
+            position: relative;
+        }
+        .mcq .answer:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.7;
+            transform: translateY(-50%);
+            box-shadow: 0 0 6px #38e8fc55;
+        }
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 1.38rem;
+            }
+            main {
+                padding: 0 .3rem;
+            }
+            .section-title {
+                font-size: 1.16rem;
+                padding: .5rem .6rem;
+            }
+            .mcq-list {
+                padding: 1.1rem .6rem .6rem .6rem;
+            }
+            .mcq .answer {
+                font-size: 0.95rem;
+                padding: .17rem .7rem;
+            }
+        }
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #23234a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38e8fc88;
+            border-radius: 6px;
+        }
+        ::selection {
+            background: #38e8fc44;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✅ Safety & First Aid – Top 50 MCQs (हिंदी)</h1>
+        <p>फ्यूचरिस्टिक डिजाइन | बेहतरीन रंग | सुरक्षा, प्राथमिक उपचार, अग्नि सुरक्षा, संकेतक और अधिक पर आधारित क्विज़</p>
+    </header>
+    <main>
+        <section>
+            <div class="section-title">🔹 General Safety & PPE (व्यक्तिगत सुरक्षा उपकरण)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">1. PPE का पूरा नाम क्या है?</span><br><span class="answer">Personal Protective Equipment</span></div>
+                <div class="mcq"><span class="question">2. हेलमेट किस अंग की सुरक्षा करता है?</span><br><span class="answer">सिर (Head)</span></div>
+                <div class="mcq"><span class="question">3. Ear plug का प्रयोग किस लिए होता है?</span><br><span class="answer">कानों की सुरक्षा के लिए</span></div>
+                <div class="mcq"><span class="question">4. Eye goggles का उपयोग किस कार्य में होता है?</span><br><span class="answer">वेल्डिंग और ग्राइंडिंग में आँख की सुरक्षा के लिए</span></div>
+                <div class="mcq"><span class="question">5. इंसुलेटेड ग्लव्स किस काम में उपयोग होते हैं?</span><br><span class="answer">बिजली के काम में करंट से बचने के लिए</span></div>
+                <div class="mcq"><span class="question">6. बिजली का कार्य करते समय कौन सा जूता पहना जाता है?</span><br><span class="answer">इंसुलेटेड सेफ्टी शूज</span></div>
+                <div class="mcq"><span class="question">7. Apron का उपयोग किया जाता है —</span><br><span class="answer">शरीर को स्पार्क, गर्मी या केमिकल से बचाने के लिए</span></div>
+                <div class="mcq"><span class="question">8. फायरमैन के लिए कौन सा PPE जरूरी होता है?</span><br><span class="answer">फायर प्रूफ सूट और हेलमेट</span></div>
+                <div class="mcq"><span class="question">9. किसी मशीन पर कार्य करते समय loose कपड़े पहनने चाहिए?</span><br><span class="answer">नहीं</span></div>
+                <div class="mcq"><span class="question">10. सुरक्षा संकेतक (Safety Signs) क्यों लगाए जाते हैं?</span><br><span class="answer">खतरे या चेतावनी की जानकारी देने के लिए</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">🔹 Fire Safety (आग से सुरक्षा)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">11. Class A आग में किस चीज़ की आग आती है?</span><br><span class="answer">कागज़, लकड़ी, कपड़ा आदि</span></div>
+                <div class="mcq"><span class="question">12. Class B आग का मुख्य स्रोत क्या होता है?</span><br><span class="answer">तेल, पेट्रोलियम, ग्रीस</span></div>
+                <div class="mcq"><span class="question">13. बिजली से लगने वाली आग कौन सी कैटेगरी में आती है?</span><br><span class="answer">Class C</span></div>
+                <div class="mcq"><span class="question">14. बिजली की आग बुझाने के लिए कौन सा extinguisher प्रयोग होता है?</span><br><span class="answer">CO₂ (कार्बन डाईऑक्साइड)</span></div>
+                <div class="mcq"><span class="question">15. पानी से कौन सी आग नहीं बुझानी चाहिए?</span><br><span class="answer">बिजली और तेल की आग</span></div>
+                <div class="mcq"><span class="question">16. CO₂ extinguisher में गैस किस रूप में होती है?</span><br><span class="answer">द्रव रूप में संग्रहित, लेकिन बाहर आते ही गैस बन जाती है</span></div>
+                <div class="mcq"><span class="question">17. Sand bucket का उपयोग किस आग में होता है?</span><br><span class="answer">Class B (तेल/ग्रेस)</span></div>
+                <div class="mcq"><span class="question">18. आग लगने की स्थिति में सबसे पहले क्या करना चाहिए?</span><br><span class="answer">स्थान खाली करना और फायर अलार्म बजाना</span></div>
+                <div class="mcq"><span class="question">19. घरेलू सिलेंडर में लगी आग को कैसे बुझाया जा सकता है?</span><br><span class="answer">गीली बोरी या CO₂ से</span></div>
+                <div class="mcq"><span class="question">20. आग बुझाने का प्राथमिक सिद्धांत क्या है?</span><br><span class="answer">ऑक्सीजन, ताप, ईंधन – इन तीनों में से एक को हटाना</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">🔹 First Aid (प्राथमिक उपचार)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">21. First Aid का अर्थ है —</span><br><span class="answer">किसी दुर्घटना के बाद तुरंत दिया गया प्राथमिक उपचार</span></div>
+                <div class="mcq"><span class="question">22. Electric shock के बाद सबसे पहले क्या करना चाहिए?</span><br><span class="answer">बिजली के स्रोत को बंद करना और लकड़ी से पीड़ित को अलग करना</span></div>
+                <div class="mcq"><span class="question">23. CPR का पूरा नाम क्या है?</span><br><span class="answer">Cardiopulmonary Resuscitation</span></div>
+                <div class="mcq"><span class="question">24. यदि नाड़ी और सांस दोनों बंद हों तो क्या करें?</span><br><span class="answer">CPR देना शुरू करें</span></div>
+                <div class="mcq"><span class="question">25. जलने पर क्या करना चाहिए?</span><br><span class="answer">ठंडे पानी से धोना और एंटीसेप्टिक लगाना</span></div>
+                <div class="mcq"><span class="question">26. कट लगने पर क्या करें?</span><br><span class="answer">घाव को साफ करके antiseptic और पट्टी लगाएं</span></div>
+                <div class="mcq"><span class="question">27. किसी को बेहोशी आ जाए तो —</span><br><span class="answer">साफ हवा में लिटाएं और पैरों को ऊपर करें</span></div>
+                <div class="mcq"><span class="question">28. Nose bleeding होने पर क्या करें?</span><br><span class="answer">सिर नीचे झुकाएं और नाक के सिरे को दबाएं</span></div>
+                <div class="mcq"><span class="question">29. Fracture (हड्डी टूटना) होने पर —</span><br><span class="answer">हिलाएं नहीं, स्प्लिंट लगाएं और डॉक्टर के पास ले जाएं</span></div>
+                <div class="mcq"><span class="question">30. First Aid Box में क्या-क्या होता है?</span><br><span class="answer">बैंडेज, कॉटन, एंटीसेप्टिक, स्किसर्स आदि</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">🔹 Electric Shock Safety</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">31. Electric shock के दौरान पीड़ित को छुड़ाने के लिए क्या उपयोग करें?</span><br><span class="answer">सूखी लकड़ी की छड़ी या रबर का सामान</span></div>
+                <div class="mcq"><span class="question">32. बिजली के झटके के बाद सबसे अधिक प्रभावित अंग कौन सा होता है?</span><br><span class="answer">हृदय और मस्तिष्क</span></div>
+                <div class="mcq"><span class="question">33. करंट लगने पर यदि दिल रुक जाए तो क्या करें?</span><br><span class="answer">CPR दें</span></div>
+                <div class="mcq"><span class="question">34. पीड़ित को छूने से पहले क्या करना चाहिए?</span><br><span class="answer">सुनिश्चित करें कि बिजली बंद है या नहीं</span></div>
+                <div class="mcq"><span class="question">35. बिजली के झटके के बाद सांस बंद हो तो —</span><br><span class="answer">Artificial respiration दें (मुंह से मुंह या CPR)</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">🔹 Rescue & Emergency Handling</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">36. बिजली के तार के संपर्क में आए व्यक्ति को तुरंत हटाने का तरीका —</span><br><span class="answer">रबर दस्ताना या लकड़ी की छड़ी से अलग करें</span></div>
+                <div class="mcq"><span class="question">37. Fire extinguisher का रंग कोड क्या दर्शाता है?</span><br><span class="answer">उसके अंदर भरी गैस का प्रकार</span></div>
+                <div class="mcq"><span class="question">38. Emergency exit किसके लिए होता है?</span><br><span class="answer">जल्दी बाहर निकलने के लिए</span></div>
+                <div class="mcq"><span class="question">39. जलने पर बर्फ क्यों नहीं लगानी चाहिए?</span><br><span class="answer">त्वचा और अधिक खराब हो सकती है</span></div>
+                <div class="mcq"><span class="question">40. किसी दुर्घटना की सूचना किसे दी जाती है?</span><br><span class="answer">Supervisor या Emergency contact</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">🔹 General Knowledge & Safety Symbols</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">41. हरे रंग का संकेत क्या दर्शाता है?</span><br><span class="answer">सुरक्षित रास्ता या आपातकालीन निकास</span></div>
+                <div class="mcq"><span class="question">42. लाल रंग का संकेत —</span><br><span class="answer">खतरा या अग्निशमन उपकरण</span></div>
+                <div class="mcq"><span class="question">43. पीला संकेत क्या बताता है?</span><br><span class="answer">सावधानी/चेतावनी</span></div>
+                <div class="mcq"><span class="question">44. “Do not operate” टैग किस स्थिति में लगाया जाता है?</span><br><span class="answer">मरम्मत या चेकिंग के समय मशीन पर</span></div>
+                <div class="mcq"><span class="question">45. LO/TO का मतलब क्या है?</span><br><span class="answer">Lock Out / Tag Out – उपकरण को बंद करके पहचान लगाना</span></div>
+                <div class="mcq"><span class="question">46. पास वर्क परमिट क्या होता है?</span><br><span class="answer">खतरनाक क्षेत्र में प्रवेश की अनुमति देने वाला दस्तावेज</span></div>
+                <div class="mcq"><span class="question">47. सुरक्षा के लिए दिन में कितनी बार टूल्स चेक करने चाहिए?</span><br><span class="answer">कम से कम एक बार कार्य शुरू करने से पहले</span></div>
+                <div class="mcq"><span class="question">48. वेल्डिंग के दौरान कौन सा PPE जरूरी है?</span><br><span class="answer">Welding shield और Gloves</span></div>
+                <div class="mcq"><span class="question">49. किसी चोटिल व्यक्ति को घसीटना क्यों नहीं चाहिए?</span><br><span class="answer">रीढ़ या गर्दन की चोट हो सकती है</span></div>
+                <div class="mcq"><span class="question">50. First Aid training का उद्देश्य क्या है?</span><br><span class="answer">तुरंत प्राथमिक इलाज देना और जान बचाना</span></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
