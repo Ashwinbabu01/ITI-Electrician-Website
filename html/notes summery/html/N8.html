@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>वायर जॉइंटिंग और बेसिक वायरिंग – ITI इलेक्ट्रीशियन नोट्स</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS for design mirroring N3.html */
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔌 वायर जॉइंटिंग और बेसिक वायरिंग</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स (सतही व कॉन्डिट वायरिंग)</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. वायर जॉइंटिंग (Wire Jointing)</h2>
+      <p>वायर जॉइंटिंग का अर्थ है दो या दो से अधिक तारों को जोड़ना ताकि एक मजबूत और कम प्रतिरोध वाला विद्युत कनेक्शन बन सके।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ एक अच्छे जॉइंट की विशेषताएँ:
+        <ul>
+          <li>यांत्रिक रूप से मजबूत हो (Mechanically Strong).</li>
+          <li>कम प्रतिरोध हो (Low Resistance).</li>
+          <li>ऑक्सीडेशन (Oxidation) और जंग से सुरक्षित हो.</li>
+        </ul>
+      </div>
+      <p><strong>मुख्य जॉइंट्स के प्रकार:</strong></p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>जॉइंट का नाम</th>
+            <th>उपयोग</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>पिग-टेल या रैट-टेल जॉइंट (Pig-tail / Rat-tail Joint)</strong></td>
+            <td>तारों को एक जंक्शन बॉक्स में जोड़ने के लिए।</td>
+          </tr>
+          <tr>
+            <td><strong>मैरिड जॉइंट (Married Joint)</strong></td>
+            <td>अस्थायी कनेक्शन या कम खिंचाव वाले स्थानों के लिए।</td>
+          </tr>
+          <tr>
+            <td><strong>टी जॉइंट (Tee Joint)</strong></td>
+            <td>मुख्य तार से शाखा (Branch) निकालने के लिए, बिना मुख्य तार को काटे।</td>
+          </tr>
+          <tr>
+            <td><strong>ब्रिटानिया जॉइंट (Britannia Joint)</strong></td>
+            <td>मोटर वाइंडिंग या मोटी तारों को जोड़ने के लिए, जहां ज्यादा यांत्रिक शक्ति की आवश्यकता हो।</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. बेसिक वायरिंग के प्रकार (Basic Wiring Types)</h2>
+      <p>विद्युत तारों को इमारतों में लगाने के तरीके को वायरिंग कहते हैं। मुख्य रूप से दो प्रकार की वायरिंग होती है: सतही (Surface) और कॉन्डिट (Conduit)।</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>वायरिंग</th>
+            <th>विवरण</th>
+            <th>उपयोग</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>सतही वायरिंग (Surface Wiring)</strong></td>
+            <td>तारें दीवार की सतह पर लगाई जाती हैं। जैसे: क्लीट वायरिंग, केसिंग-कैपिंग।</td>
+            <td>अस्थायी प्रतिष्ठान, गोदाम, मरम्मत कार्य।</td>
+          </tr>
+          <tr>
+            <td><strong>कॉन्डिट वायरिंग (Conduit Wiring)</strong></td>
+            <td>तारें पाइपों (Conduits) के अंदर डाली जाती हैं।</td>
+            <td>घर, कार्यालय, औद्योगिक इमारतें (स्थायी और सुरक्षित)।</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. सतही और कॉन्डिट वायरिंग की तुलना</h2>
+      <p>दोनों प्रकार की वायरिंग के अपने फायदे और नुकसान हैं:</p>
+      <ul>
+        <li><strong>सतही वायरिंग (Surface Wiring):</strong>
+          <ul>
+            <li><strong>लाभ:</strong> लागत कम, लगाने में आसान, मरम्मत सरल।</li>
+            <li><strong>हानि:</strong> आकर्षक नहीं, यांत्रिक क्षति का खतरा, नमी से खतरा।</li>
+          </ul>
+        </li>
+        <li><strong>कॉन्डिट वायरिंग (Conduit Wiring):</strong>
+          <ul>
+            <li><strong>लाभ:</strong> अधिक सुरक्षित, आग का खतरा कम, सौंदर्यपूर्ण (छिपी हुई), लंबे समय तक चलती है।</li>
+            <li><strong>हानि:</strong> लागत अधिक, लगाने में कठिन, मरम्मत जटिल।</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="other-points">
+        <strong>नोट:</strong> कॉन्डिट वायरिंग दो प्रकार की होती है - <strong>छिपी हुई (Concealed)</strong> और <strong>खुली (Exposed)</strong>। छिपी हुई वायरिंग दीवारों के अंदर होती है।
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 त्वरित अभ्यास प्रश्न (Quick Revision)</div>
+      <ol class="question-list">
+        <li>मुख्य तार को बिना काटे शाखा निकालने के लिए कौन सा जॉइंट उपयोग होता है?
+          <span class="answer">➡️ उत्तर: टी जॉइंट (Tee Joint)</span>
+        </li>
+        <li>तारों के जॉइंट में कौन सी विशेषता आवश्यक है?
+          <span class="answer">➡️ उत्तर: यांत्रिक मजबूती और कम प्रतिरोध।</span>
+        </li>
+        <li>किस प्रकार की वायरिंग सबसे सुरक्षित मानी जाती है?
+          <span class="answer">➡️ उत्तर: कॉन्डिट वायरिंग (Conduit Wiring)</span>
+        </li>
+        <li>कॉन्डिट वायरिंग में पाइपों का उपयोग क्यों किया जाता है?
+          <span class="answer">➡️ उत्तर: तारों को यांत्रिक क्षति और नमी से बचाने के लिए।</span>
+        </li>
+        <li>गोदामों या अस्थायी प्रतिष्ठानों के लिए कौन सी वायरिंग उपयुक्त है?
+          <span class="answer">➡️ उत्तर: सतही वायरिंग (Surface Wiring)</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
