@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विद्युत के मूल तत्व (Basics of Electricity) – Top Q&A</title>
+    <style>
+        :root {
+            --primary-bg: #181828;
+            --secondary-bg: #23234a;
+            --gradient: linear-gradient(90deg, #4f8cff 0%, #38e8fc 100%);
+            --card-gradient: linear-gradient(135deg, #202040 55%, #2fa8ff 100%);
+            --accent: #38e8fc;
+            --heading: #4f8cff;
+            --answer-bg: #23234a;
+            --answer-text: #38e8fc;
+            --question-text: #f6f6f6;
+            --section-title-bg: #23234a;
+            --section-title-border: #38e8fc;
+            --shadow: 0 4px 28px 0 rgba(56,232,252,0.10), 0 2px 4px rgba(0,0,0,0.13);
+            --border-radius: 18px;
+            --font-main: 'Segoe UI', 'Noto Sans', Arial, Helvetica, sans-serif;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background: var(--primary-bg);
+            color: var(--question-text);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+        header {
+            background: var(--gradient);
+            color: #fff;
+            padding: 2.5rem 0 1.4rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px #38e8fc80;
+        }
+        header p {
+            margin-top: .7rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.96;
+            text-shadow: 0 0 6px #4f8cff44;
+        }
+        main {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 2.7rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--heading);
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            background: var(--section-title-bg);
+            padding: .8rem 1.2rem;
+            border-left: 6px solid var(--section-title-border);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 16px #38e8fc22;
+            position: relative;
+            letter-spacing: .6px;
+        }
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            opacity: .85;
+            box-shadow: 0 0 12px #38e8fc55;
+        }
+        .mcq-list {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.3rem 1.7rem 1.4rem 1.7rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #38e8fc18;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            animation: fadeInCard 0.7s;
+        }
+        @keyframes fadeInCard {
+            0% { opacity: 0; transform: translateY(40px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .mcq {
+            margin-bottom: .6rem;
+            padding: .7rem 1.1rem .7rem .7rem;
+            background: #23234a77;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px #38e8fc14;
+            transition: background 0.2s;
+        }
+        .mcq:hover {
+            background: #38e8fc19;
+        }
+        .mcq .question {
+            font-weight: 500;
+            color: var(--question-text);
+            margin-bottom: .18rem;
+            font-size: 1.08rem;
+            letter-spacing: .2px;
+        }
+        .mcq .answer {
+            display: inline-block;
+            background: var(--answer-bg);
+            color: var(--answer-text);
+            font-weight: 700;
+            padding: .27rem 1.2rem .27rem 1.2rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            margin-top: .08rem;
+            box-shadow: 0 2px 10px #38e8fc18;
+            border: 1.5px solid var(--accent);
+            text-shadow: 0 0 8px #38e8fc44;
+        }
+        .mcq .answer {
+            position: relative;
+        }
+        .mcq .answer:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.7;
+            transform: translateY(-50%);
+            box-shadow: 0 0 6px #38e8fc55;
+        }
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 1.38rem;
+            }
+            main {
+                padding: 0 .3rem;
+            }
+            .section-title {
+                font-size: 1.16rem;
+                padding: .5rem .6rem;
+            }
+            .mcq-list {
+                padding: 1.1rem .6rem .6rem .6rem;
+            }
+            .mcq .answer {
+                font-size: 0.95rem;
+                padding: .17rem .7rem;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #23234a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38e8fc88;
+            border-radius: 6px;
+        }
+        ::selection {
+            background: #38e8fc44;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔌 विद्युत के मूल तत्व (Basics of Electricity) – Top Questions & Answers</h1>
+        <p>धारा, वोल्टेज, प्रतिरोध, ओम का नियम, शक्ति, ऊर्जा, सुरक्षा आदि पर आधारित क्विज़  |<br>❤ ASHWIN ❤</p>
+    </header>
+    <main>
+        <section>
+            <div class="section-title">I. मूल अवधारणाएँ (Fundamental Concepts)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">1. विद्युत धारा की मूल परिभाषा क्या है?</span><br><span class="answer">एक चालक के माध्यम से विद्युत आवेश (इलेक्ट्रॉन) का प्रवाह।</span></div>
+                <div class="mcq"><span class="question">2. विद्युत आवेश की इकाई क्या है?</span><br><span class="answer">कूलम्ब (C)।</span></div>
+                <div class="mcq"><span class="question">3. 1 एम्पीयर किसके बराबर होता है?</span><br><span class="answer">प्रति सेकंड 1 कूलम्ब आवेश का प्रवाह (1 C/s)।</span></div>
+                <div class="mcq"><span class="question">4. एक परमाणु के तीन मुख्य घटक क्या हैं?</span><br><span class="answer">प्रोटॉन, न्यूट्रॉन, और इलेक्ट्रॉन।</span></div>
+                <div class="mcq"><span class="question">5. परमाणु का कौन सा भाग विद्युत चालन के लिए जिम्मेदार है?</span><br><span class="answer">मुक्त इलेक्ट्रॉन।</span></div>
+                <div class="mcq"><span class="question">6. एक इलेक्ट्रॉन पर क्या आवेश होता है?</span><br><span class="answer">ऋणात्मक आवेश।</span></div>
+                <div class="mcq"><span class="question">7. एक प्रोटॉन पर क्या आवेश होता है?</span><br><span class="answer">धनात्मक आवेश।</span></div>
+                <div class="mcq"><span class="question">8. एक न्यूट्रॉन पर क्या आवेश होता है?</span><br><span class="answer">उदासीन (कोई आवेश नहीं)।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">II. धारा (Current)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">9. विद्युत धारा की SI इकाई क्या है?</span><br><span class="answer">एम्पीयर (A)।</span></div>
+                <div class="mcq"><span class="question">10. विद्युत धारा को मापने के लिए किस उपकरण का उपयोग किया जाता है?</span><br><span class="answer">एमीटर।</span></div>
+                <div class="mcq"><span class="question">11. एक एमीटर को सर्किट में कैसे जोड़ा जाता है?</span><br><span class="answer">श्रृंखला में।</span></div>
+                <div class="mcq"><span class="question">12. दिष्ट धारा (DC) क्या है?</span><br><span class="answer">वह धारा जो केवल एक दिशा में बहती है।</span></div>
+                <div class="mcq"><span class="question">13. प्रत्यावर्ती धारा (AC) क्या है?</span><br><span class="answer">वह धारा जो समय-समय पर अपनी दिशा उलटती है।</span></div>
+                <div class="mcq"><span class="question">14. भारत में AC आपूर्ति की आवृत्ति क्या है?</span><br><span class="answer">50 हर्ट्ज (Hz)।</span></div>
+                <div class="mcq"><span class="question">15. परंपरागत धारा प्रवाह की दिशा क्या है?</span><br><span class="answer">धनात्मक टर्मिनल से ऋणात्मक टर्मिनल की ओर।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">III. वोल्टेज/विभव (Voltage)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">16. वोल्टेज क्या है?</span><br><span class="answer">एक सर्किट में दो बिंदुओं के बीच का विभवांतर, जो धारा को चलाता है।</span></div>
+                <div class="mcq"><span class="question">17. वोल्टेज की SI इकाई क्या है?</span><br><span class="answer">वोल्ट (V)।</span></div>
+                <div class="mcq"><span class="question">18. विद्युतवाहक बल (EMF) क्या है?</span><br><span class="answer">एक स्रोत द्वारा उत्पन्न कुल वोल्टेज।</span></div>
+                <div class="mcq"><span class="question">19. वोल्टेज मापने के लिए किस उपकरण का उपयोग किया जाता है?</span><br><span class="answer">वोल्टमीटर।</span></div>
+                <div class="mcq"><span class="question">20. एक वोल्टमीटर को सर्किट में कैसे जोड़ा जाता है?</span><br><span class="answer">समानांतर में।</span></div>
+                <div class="mcq"><span class="question">21. भारत में मानक एकल-चरण वोल्टेज क्या है?</span><br><span class="answer">230V।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">IV. प्रतिरोध (Resistance)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">22. प्रतिरोध क्या है?</span><br><span class="answer">एक सामग्री द्वारा विद्युत धारा के प्रवाह में पेश किया गया विरोध।</span></div>
+                <div class="mcq"><span class="question">23. प्रतिरोध की SI इकाई क्या है?</span><br><span class="answer">ओम (Ω)।</span></div>
+                <div class="mcq"><span class="question">24. प्रतिरोध मापने के लिए किस उपकरण का उपयोग किया जाता है?</span><br><span class="answer">ओह्ममीटर या मल्टीमीटर।</span></div>
+                <div class="mcq"><span class="question">25. विशिष्ट प्रतिरोध क्या है?</span><br><span class="answer">किसी पदार्थ की आंतरिक प्रतिरोधक क्षमता। इसकी इकाई ओम-मीटर (Ω-m) है।</span></div>
+                <div class="mcq"><span class="question">26. एक चालक के प्रतिरोध को कौन से कारक प्रभावित करते हैं?</span><br><span class="answer">लंबाई, अनुप्रस्थ काट का क्षेत्रफल, सामग्री (प्रतिरोधकता), और तापमान।</span></div>
+                <div class="mcq"><span class="question">27. एक चालक की लंबाई बढ़ाने से उसके प्रतिरोध पर क्या प्रभाव पड़ता है?</span><br><span class="answer">प्रतिरोध बढ़ता है।</span></div>
+                <div class="mcq"><span class="question">28. एक चालक के अनुप्रस्थ काट के क्षेत्रफल को बढ़ाने से उसके प्रतिरोध पर क्या प्रभाव पड़ता है?</span><br><span class="answer">प्रतिरोध घटता है।</span></div>
+                <div class="mcq"><span class="question">29. शुद्ध धातुओं के प्रतिरोध पर तापमान का क्या प्रभाव होता है?</span><br><span class="answer">तापमान में वृद्धि के साथ प्रतिरोध बढ़ता है।</span></div>
+                <div class="mcq"><span class="question">30. अवरोधकों और अर्धचालकों के प्रतिरोध पर तापमान का क्या प्रभाव होता है?</span><br><span class="answer">तापमान में वृद्धि के साथ प्रतिरोध घटता है।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">V. चालक, अवरोधक और अर्धचालक</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">31. चालक क्या है?</span><br><span class="answer">एक सामग्री जो विद्युत धारा को आसानी से बहने देती है।</span></div>
+                <div class="mcq"><span class="question">32. अच्छे चालकों के दो उदाहरण दें।</span><br><span class="answer">चांदी, तांबा, एल्यूमीनियम।</span></div>
+                <div class="mcq"><span class="question">33. अवरोधक क्या है?</span><br><span class="answer">एक सामग्री जो विद्युत धारा के प्रवाह में बहुत अधिक प्रतिरोध प्रदान करती है।</span></div>
+                <div class="mcq"><span class="question">34. अच्छे अवरोधकों के दो उदाहरण दें।</span><br><span class="answer">पीवीसी, रबर, चीनी मिट्टी, कांच, लकड़ी।</span></div>
+                <div class="mcq"><span class="question">35. अर्धचालक क्या हैं?</span><br><span class="answer">सामग्रियां जिनकी चालकता चालकों और अवरोधकों के बीच होती है।</span></div>
+                <div class="mcq"><span class="question">36. अर्धचालकों के दो उदाहरण दें।</span><br><span class="answer">सिलिकॉन, जर्मेनियम।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">VI. ओम का नियम (Ohm's Law)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">37. ओम के नियम का वर्णन करें।</span><br><span class="answer">V ∝ I (V = I × R)।</span></div>
+                <div class="mcq"><span class="question">38. ओम के नियम का गणितीय सूत्र क्या है?</span><br><span class="answer">V = I × R</span></div>
+                <div class="mcq"><span class="question">39. ओम के नियम का उपयोग करके आप प्रतिरोध (R) की गणना कैसे कर सकते हैं?</span><br><span class="answer">R = V / I</span></div>
+                <div class="mcq"><span class="question">40. ओम के नियम का उपयोग करके आप धारा (I) की गणना कैसे कर सकते हैं?</span><br><span class="answer">I = V / R</span></div>
+                <div class="mcq"><span class="question">41. यदि एक रोकनेवाला के पार वोल्टेज दोगुना हो जाता है, तो धारा का क्या होता है?</span><br><span class="answer">धारा दोगुनी हो जाएगी।</span></div>
+                <div class="mcq"><span class="question">42. एक आदर्श चालक का प्रतिरोध क्या है?</span><br><span class="answer">शून्य</span></div>
+                <div class="mcq"><span class="question">43. एक आदर्श अवरोधक का प्रतिरोध क्या है?</span><br><span class="answer">अनंत</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">VII. विद्युत शक्ति और ऊर्जा (Electrical Power and Energy)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">44. विद्युत शक्ति क्या है?</span><br><span class="answer">वह दर जिस पर विद्युत ऊर्जा परिवर्तित या खपत होती है।</span></div>
+                <div class="mcq"><span class="question">45. विद्युत शक्ति की SI इकाई क्या है?</span><br><span class="answer">वाट (W)।</span></div>
+                <div class="mcq"><span class="question">46. एक DC सर्किट में शक्ति (P) की गणना के लिए मूल सूत्र क्या है?</span><br><span class="answer">P = V × I</span></div>
+                <div class="mcq"><span class="question">47. वाट और किलोवाट के बीच क्या संबंध है?</span><br><span class="answer">1 किलोवाट (kW) = 1000 वाट (W)</span></div>
+                <div class="mcq"><span class="question">48. विद्युत ऊर्जा क्या है?</span><br><span class="answer">समय की अवधि में खपत की गई शक्ति।</span></div>
+                <div class="mcq"><span class="question">49. विद्युत ऊर्जा खपत की वाणिज्यिक इकाई क्या है?</span><br><span class="answer">किलोवाट-घंटा (kWh) या यूनिट।</span></div>
+                <div class="mcq"><span class="question">50. विद्युत ऊर्जा की गणना के लिए सूत्र क्या है?</span><br><span class="answer">ऊर्जा = शक्ति × समय (E = P × t)</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">VIII. सर्किट घटक और कनेक्शन (Circuit Components and Connections)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">51. विद्युत सर्किट के दो मूल प्रकार क्या हैं?</span><br><span class="answer">श्रृंखला सर्किट और समानांतर सर्किट</span></div>
+                <div class="mcq"><span class="question">52. एक श्रृंखला सर्किट में, क्या समान रहता है?</span><br><span class="answer">धारा</span></div>
+                <div class="mcq"><span class="question">53. एक समानांतर सर्किट में, क्या समान रहता है?</span><br><span class="answer">वोल्टेज</span></div>
+                <div class="mcq"><span class="question">54. श्रृंखला सर्किट में कुल प्रतिरोध की गणना कैसे की जाती है?</span><br><span class="answer">Rₜₒₜₐₗ = R₁ + R₂ + R₃ + ...</span></div>
+                <div class="mcq"><span class="question">55. समानांतर सर्किट में कुल प्रतिरोध की गणना कैसे की जाती है?</span><br><span class="answer">1/Rₜₒₜₐₗ = 1/R₁ + 1/R₂ + 1/R₃ + ...</span></div>
+                <div class="mcq"><span class="question">56. श्रृंखला सर्किट का मुख्य नुकसान क्या है?</span><br><span class="answer">यदि एक घटक विफल हो जाता है, तो पूरा सर्किट टूट जाता है।</span></div>
+                <div class="mcq"><span class="question">57. समानांतर सर्किट का मुख्य लाभ क्या है?</span><br><span class="answer">घटक स्वतंत्र रूप से कार्य करते हैं; यदि एक विफल हो जाता है, तो अन्य काम करना जारी रखते हैं।</span></div>
+                <div class="mcq"><span class="question">58. "शॉर्ट सर्किट" क्या है?</span><br><span class="answer">बहुत कम प्रतिरोध का एक अनपेक्षित पथ, जिससे एक बड़ी धारा का प्रवाह होता है।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">IX. सुरक्षा और विविध (Safety and Miscellaneous)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">59. एक विद्युत सर्किट में फ्यूज का कार्य क्या है?</span><br><span class="answer">पिघलकर और सर्किट को तोड़कर अतिप्रवाह से सर्किट की रक्षा करना।</span></div>
+                <div class="mcq"><span class="question">60. फ्यूज तार के लिए आमतौर पर किस सामग्री का उपयोग किया जाता है?</span><br><span class="answer">सीसा और टिन की एक कम गलनांक वाली मिश्र धातु।</span></div>
+                <div class="mcq"><span class="question">61. ग्राउंडिंग या अर्थिंग का उद्देश्य क्या है?</span><br><span class="answer">दोष धारा को पृथ्वी तक कम प्रतिरोध वाला मार्ग प्रदान करना, उपकरण और उपयोगकर्ताओं को बचाना।</span></div>
+                <div class="mcq"><span class="question">62. खुले सर्किट और बंद सर्किट के बीच क्या अंतर है?</span><br><span class="answer">बंद सर्किट धारा को बहने देता है; खुले सर्किट में धारा प्रवाह नहीं होता।</span></div>
+                <div class="mcq"><span class="question">63. प्रतिरोध का व्युत्क्रम क्या है?</span><br><span class="answer">चालकता (Conductance)</span></div>
+                <div class="mcq"><span class="question">64. चालकता की इकाई क्या है?</span><br><span class="answer">सीमेंस (S) या म्हो (Mho)</span></div>
+                <div class="mcq"><span class="question">65. प्रतिरोधकता का व्युत्क्रम क्या है?</span><br><span class="answer">विशिष्ट चालकता (Conductivity)</span></div>
+                <div class="mcq"><span class="question">66. आवृत्ति की इकाई क्या है?</span><br><span class="answer">हर्ट्ज़ (Hz)</span></div>
+                <div class="mcq"><span class="question">67. मानव शरीर के लिए अधिकतम सुरक्षित धारा सीमा क्या है?</span><br><span class="answer">आमतौर पर लगभग 9 mA से 15 mA</span></div>
+                <div class="mcq"><span class="question">68. कौन सा उपकरण वोल्टेज, धारा और प्रतिरोध को माप सकता है?</span><br><span class="answer">मल्टीमीटर</span></div>
+                <div class="mcq"><span class="question">69. वाट, वोल्ट और एम्पीयर के बीच क्या संबंध है?</span><br><span class="answer">वाट = वोल्ट × एम्पीयर (P = V × I)</span></div>
+                <div class="mcq"><span class="question">70. विद्युत ऊर्जा की एसआई इकाई क्या है?</span><br><span class="answer">जूल (Joule)</span></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
