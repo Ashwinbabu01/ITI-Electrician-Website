@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>AC मूल सिद्धांत – ITI इलेक्ट्रीशियन नोट्स</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS for design mirroring N3.html */
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>〰️ AC मूल सिद्धांत (AC Fundamentals)</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स (चक्र, आवृत्ति, RMS और पावर फैक्टर)</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. AC (प्रत्यावर्ती धारा) और DC (दिष्ट धारा)</h2>
+      <p><strong>AC (Alternating Current):</strong> वह विद्युत धारा जिसकी दिशा और मान (Magnitude) समय के साथ बदलते रहते हैं।</p>
+      <p><strong>DC (Direct Current):</strong> वह विद्युत धारा जिसकी दिशा और मान समय के साथ स्थिर रहते हैं।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ भारत में AC की मानक आवृत्ति 50 Hz है।
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. AC से संबंधित मुख्य पद</h2>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>पद</th>
+            <th>विवरण</th>
+            <th>इकाई</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>चक्र (Cycle)</strong></td>
+            <td>AC तरंग के एक पूर्ण सकारात्मक और एक नकारात्मक परिवर्तन को पूरा करने में लगा समय।</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>आवृत्ति (Frequency, f)</strong></td>
+            <td>प्रति सेकंड चक्रों की संख्या।</td>
+            <td>हर्ट्ज़ (Hz)</td>
+          </tr>
+          <tr>
+            <td><strong>समय अवधि (Time Period, T)</strong></td>
+            <td>एक चक्र को पूरा करने में लगा समय। $T = 1/f$</td>
+            <td>सेकंड (s)</td>
+          </tr>
+          <tr>
+            <td><strong>आयाम (Amplitude)</strong></td>
+            <td>एक चक्र में तरंग का अधिकतम मान (Peak Value)।</td>
+            <td>वोल्ट (V) या एम्पीयर (A)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. AC मान (RMS, Average, Peak)</h2>
+      <p>AC के मान को अक्सर तीन तरीकों से परिभाषित किया जाता है:</p>
+      <ul>
+        <li><strong>पीक मान (Peak Value, $V_m$ or $I_m$):</strong> तरंग का अधिकतम मान।</li>
+        <li><strong>RMS मान (Root Mean Square Value):</strong> यह AC का वह मान है जो उतनी ही शक्ति उत्पन्न करता है जितनी DC करता है। यह AC का सबसे महत्वपूर्ण और उपयोग किया जाने वाला मान है।
+          <div class="formula">RMS मान = 0.707 × Peak मान</div>
+        </li>
+        <li><strong>औसत मान (Average Value):</strong> आधे चक्र में AC तरंग का औसत मान।
+          <div class="formula">औसत मान = 0.637 × Peak मान</div>
+        </li>
+      </ul>
+      <p><strong>फॉर्म फैक्टर (Form Factor):</strong> RMS मान और औसत मान का अनुपात। फॉर्म फैक्टर = RMS मान / औसत मान = 1.11 (शुद्ध साइन वेव के लिए)</p>
+      <p><strong>पीक फैक्टर (Peak Factor):</strong> पीक मान और RMS मान का अनुपात। पीक फैक्टर = पीक मान / RMS मान = 1.414 (शुद्ध साइन वेव के लिए)</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>4. पावर फैक्टर (Power Factor)</h2>
+      <p>पावर फैक्टर (PF) किसी AC सर्किट में वास्तविक शक्ति (Real Power) और आभासी शक्ति (Apparent Power) का अनुपात होता है।</p>
+      <div class="formula">
+        पावर फैक्टर (PF) = Real Power (kW) / Apparent Power (kVA)
+      </div>
+      <div class="other-points">
+        ✅ पावर फैक्टर का महत्व:
+        <ul>
+          <li>इकाई (Unity, 1) पावर फैक्टर सबसे अच्छा होता है।</li>
+          <li>कम पावर फैक्टर का मतलब है कि सर्किट में ऊर्जा का अधिक अपव्यय हो रहा है।</li>
+          <li>पावर फैक्टर को सुधारने के लिए कैपेसिटर (Capacitors) का उपयोग किया जाता है।</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 त्वरित अभ्यास प्रश्न (Quick Revision)</div>
+      <ol class="question-list">
+        <li>भारत में विद्युत आपूर्ति की मानक आवृत्ति क्या है?
+          <span class="answer">➡️ उत्तर: 50 Hz</span>
+        </li>
+        <li>AC का वह मान क्या है जो DC के बराबर शक्ति उत्पन्न करता है?
+          <span class="answer">➡️ उत्तर: RMS मान (RMS Value)</span>
+        </li>
+        <li>फॉर्म फैक्टर का मान शुद्ध साइन वेव के लिए क्या होता है?
+          <span class="answer">➡️ उत्तर: 1.11</span>
+        </li>
+        <li>आवृत्ति की इकाई क्या है?
+          <span class="answer">➡️ उत्तर: हर्ट्ज़ (Hz)</span>
+        </li>
+        <li>पावर फैक्टर को सुधारने के लिए क्या उपयोग किया जाता है?
+          <span class="answer">➡️ उत्तर: कैपेसिटर (Capacitor)</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
