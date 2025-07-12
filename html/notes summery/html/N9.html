@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>चुंबकत्व और विद्युत चुम्बकीय प्रेरण – ITI इलेक्ट्रीशियन नोट्स</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS for design mirroring N3.html */
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧲 चुंबकत्व और विद्युत चुम्बकीय प्रेरण</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. चुंबकत्व (Magnetism)</h2>
+      <p>चुंबकत्व वह गुण है जिसके कारण कोई पदार्थ लोहे जैसी चुंबकीय वस्तुओं को आकर्षित करता है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ चुंबक के गुण:
+        <ul>
+          <li><strong>आकर्षण:</strong> चुंबक लोहे, निकल, कोबाल्ट जैसी वस्तुओं को आकर्षित करता है।</li>
+          <li><strong>विकर्षण:</strong> समान ध्रुव (Same Poles) एक-दूसरे को विकर्षित करते हैं (Repel)।</li>
+          <li><strong>आकर्षण:</strong> असमान ध्रुव (Opposite Poles) एक-दूसरे को आकर्षित करते हैं (Attract)।</li>
+          <li><strong>दिशात्मक गुण:</strong> स्वतंत्र रूप से लटकाने पर, चुंबक हमेशा उत्तर-दक्षिण दिशा में ठहरता है।</li>
+        </ul>
+      </div>
+      <p><strong>चुंबक के प्रकार:</strong></p>
+      <ul>
+        <li><strong>स्थायी चुंबक (Permanent Magnets):</strong> ये अपना चुंबकत्व लंबे समय तक बनाए रखते हैं (जैसे, स्पीकर, मीटर)।</li>
+        <li><strong>अस्थायी चुंबक (Temporary Magnets):</strong> इनका चुंबकत्व केवल तभी तक रहता है जब तक चुंबकीय क्षेत्र मौजूद हो (जैसे, इलेक्ट्रोमैग्नेट)।</li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. चुंबकीय क्षेत्र और पद (Magnetic Field & Terms)</h2>
+      <p>चुंबक के चारों ओर का वह क्षेत्र जहां उसका प्रभाव महसूस किया जा सकता है, चुंबकीय क्षेत्र कहलाता है।</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>पद</th>
+            <th>विवरण</th>
+            <th>SI इकाई</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>चुंबकीय प्रवाह (Magnetic Flux, Φ)</strong></td>
+            <td>चुंबकीय क्षेत्र रेखाओं की कुल संख्या।</td>
+            <td>वेबर (Weber)</td>
+          </tr>
+          <tr>
+            <td><strong>चुंबकीय प्रवाह घनत्व (Flux Density, B)</strong></td>
+            <td>प्रति इकाई क्षेत्र में चुंबकीय प्रवाह।</td>
+            <td>टेस्ला (Tesla) या वेबर/मी²</td>
+          </tr>
+          <tr>
+            <td><strong>MMF (Magnetomotive Force)</strong></td>
+            <td>चुंबकीय प्रवाह को स्थापित करने वाला बल।</td>
+            <td>एम्पीयर-टर्न (Ampere-Turn, AT)</td>
+          </tr>
+          <tr>
+            <td><strong>प्रतिष्टम्भ (Reluctance, S)</strong></td>
+            <td>चुंबकीय पथ में प्रवाह के विरोध का माप।</td>
+            <td>प्रति हेनरी (1/Henry)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. विद्युत चुम्बकीय प्रेरण (Electromagnetic Induction)</h2>
+      <p>यह वह प्रक्रिया है जिसमें एक चालक और चुंबकीय क्षेत्र के बीच सापेक्ष गति (Relative Motion) के कारण चालक में वोल्टेज (EMF) उत्पन्न होता है।</p>
+      <div class="other-points">
+        <strong>फैराडे के विद्युत चुम्बकीय प्रेरण के नियम:</strong>
+        <ul>
+          <li><strong>पहला नियम:</strong> जब भी एक चालक चुंबकीय फ्लक्स को काटता है, तो उसमें EMF प्रेरित होता है।</li>
+          <li><strong>दूसरा नियम:</strong> प्रेरित EMF का परिमाण (Magnitude) फ्लक्स लिंकेज के परिवर्तन की दर के सीधे आनुपातिक होता है।</li>
+        </ul>
+      </div>
+      <p><strong>लेन्ज़ का नियम (Lenz’s Law):</strong><br>
+        यह नियम प्रेरित EMF की दिशा बताता है। प्रेरित EMF हमेशा उस कारण का विरोध करता है जिसके कारण वह उत्पन्न हुआ है। यह ऊर्जा संरक्षण के सिद्धांत पर आधारित है।</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>4. फ्लेमिंग के नियम (Fleming’s Rules)</h2>
+      <p>प्रेरित करंट या बल की दिशा निर्धारित करने के लिए इन नियमों का उपयोग किया जाता है।</p>
+      <ul>
+        <li><strong>फ्लेमिंग का दायां हाथ नियम (Right-Hand Rule):</strong>
+          <p>जनरेटर में प्रेरित EMF की दिशा ज्ञात करने के लिए।</p>
+        </li>
+        <li><strong>फ्लेमिंग का बायां हाथ नियम (Left-Hand Rule):</strong>
+          <p>मोटर में बल (Force) या टॉर्क की दिशा ज्ञात करने के लिए।</p>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 त्वरित अभ्यास प्रश्न (Quick Revision)</div>
+      <ol class="question-list">
+        <li>चुंबकीय प्रवाह (Magnetic Flux) की SI इकाई क्या है?
+          <span class="answer">➡️ उत्तर: वेबर (Weber)</span>
+        </li>
+        <li>कौन सा नियम प्रेरित EMF की दिशा और ऊर्जा संरक्षण से संबंधित है?
+          <span class="answer">➡️ उत्तर: लेन्ज़ का नियम (Lenz’s Law)</span>
+        </li>
+        <li>जनरेटर के लिए फ्लेमिंग का कौन सा नियम उपयोग होता है?
+          <span class="answer">➡️ उत्तर: दायां हाथ नियम (Right-Hand Rule)</span>
+        </li>
+        <li>चुंबकीय क्षेत्र रेखाएं कहाँ से निकलती हैं और कहाँ प्रवेश करती हैं?
+          <span class="answer">➡️ उत्तर: उत्तर ध्रुव से निकलती हैं और दक्षिण ध्रुव में प्रवेश करती हैं।</span>
+        </li>
+        <li>मोटर के लिए फ्लेमिंग का कौन सा नियम उपयोग होता है?
+          <span class="answer">➡️ उत्तर: बायां हाथ नियम (Left-Hand Rule)</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
