@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विद्युत प्रतीक, इकाइयां और SI प्रणाली (Electrical Symbols, Units and SI System) – Q&A</title>
+    <style>
+        :root {
+            --primary-bg: #181828;
+            --secondary-bg: #23234a;
+            --gradient: linear-gradient(90deg, #4f8cff 0%, #38e8fc 100%);
+            --card-gradient: linear-gradient(135deg, #202040 55%, #2fa8ff 100%);
+            --accent: #38e8fc;
+            --heading: #4f8cff;
+            --answer-bg: #23234a;
+            --answer-text: #38e8fc;
+            --question-text: #f6f6f6;
+            --section-title-bg: #23234a;
+            --section-title-border: #38e8fc;
+            --shadow: 0 4px 28px 0 rgba(56,232,252,0.10), 0 2px 4px rgba(0,0,0,0.13);
+            --border-radius: 18px;
+            --font-main: 'Segoe UI', 'Noto Sans', Arial, Helvetica, sans-serif;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background: var(--primary-bg);
+            color: var(--question-text);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+        header {
+            background: var(--gradient);
+            color: #fff;
+            padding: 2.5rem 0 1.4rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px #38e8fc80;
+        }
+        header p {
+            margin-top: .7rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.96;
+            text-shadow: 0 0 6px #4f8cff44;
+        }
+        main {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 2.7rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--heading);
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            background: var(--section-title-bg);
+            padding: .8rem 1.2rem;
+            border-left: 6px solid var(--section-title-border);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 16px #38e8fc22;
+            position: relative;
+            letter-spacing: .6px;
+        }
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            opacity: .85;
+            box-shadow: 0 0 12px #38e8fc55;
+        }
+        .mcq-list {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2.3rem 1.7rem 1.4rem 1.7rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #38e8fc18;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            animation: fadeInCard 0.7s;
+        }
+        @keyframes fadeInCard {
+            0% { opacity: 0; transform: translateY(40px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .mcq {
+            margin-bottom: .6rem;
+            padding: .7rem 1.1rem .7rem .7rem;
+            background: #23234a77;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px #38e8fc14;
+            transition: background 0.2s;
+        }
+        .mcq:hover {
+            background: #38e8fc19;
+        }
+        .mcq .question {
+            font-weight: 500;
+            color: var(--question-text);
+            margin-bottom: .18rem;
+            font-size: 1.08rem;
+            letter-spacing: .2px;
+        }
+        .mcq .answer {
+            display: inline-block;
+            background: var(--answer-bg);
+            color: var(--answer-text);
+            font-weight: 700;
+            padding: .27rem 1.2rem .27rem 1.2rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            margin-top: .08rem;
+            box-shadow: 0 2px 10px #38e8fc18;
+            border: 1.5px solid var(--accent);
+            text-shadow: 0 0 8px #38e8fc44;
+        }
+        .mcq .answer {
+            position: relative;
+        }
+        .mcq .answer:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.7;
+            transform: translateY(-50%);
+            box-shadow: 0 0 6px #38e8fc55;
+        }
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 1.38rem;
+            }
+            main {
+                padding: 0 .3rem;
+            }
+            .section-title {
+                font-size: 1.16rem;
+                padding: .5rem .6rem;
+            }
+            .mcq-list {
+                padding: 1.1rem .6rem .6rem .6rem;
+            }
+            .mcq .answer {
+                font-size: 0.95rem;
+                padding: .17rem .7rem;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #23234a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38e8fc88;
+            border-radius: 6px;
+        }
+        ::selection {
+            background: #38e8fc44;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔌 विद्युत प्रतीक, इकाइयां और SI प्रणाली (Electrical Symbols, Units and SI System) – Q&A</h1>
+        <p>विद्युत प्रतीक, SI इकाइयाँ और रूपांतरण पर आधारित क्विज़</p>
+    </header>
+    <main>
+        <section>
+            <div class="section-title">I. SI प्रणाली और विद्युत इकाइयाँ (SI System and Electrical Units)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">1. SI प्रणाली में विद्युत धारा की मूल इकाई क्या है?</span><br><span class="answer">एम्पीयर (Ampere), प्रतीक (Symbol): A</span></div>
+                <div class="mcq"><span class="question">2. विद्युत प्रतिरोध (Electrical Resistance) की SI इकाई क्या है?</span><br><span class="answer">ओम (Ohm), प्रतीक: Ω</span></div>
+                <div class="mcq"><span class="question">3. विद्युत विभव या वोल्टेज (Voltage) की SI इकाई क्या है?</span><br><span class="answer">वोल्ट (Volt), प्रतीक: V</span></div>
+                <div class="mcq"><span class="question">4. विद्युत शक्ति (Electrical Power) की SI इकाई क्या है?</span><br><span class="answer">वाट (Watt), प्रतीक: W</span></div>
+                <div class="mcq"><span class="question">5. विद्युत ऊर्जा (Electrical Energy) की SI इकाई क्या है?</span><br><span class="answer">जूल (Joule), प्रतीक: J</span></div>
+                <div class="mcq"><span class="question">6. विद्युत आवेश (Electric Charge) की SI इकाई क्या है?</span><br><span class="answer">कूलम्ब (Coulomb), प्रतीक: C</span></div>
+                <div class="mcq"><span class="question">7. आवृत्ति (Frequency) की SI इकाई क्या है?</span><br><span class="answer">हर्ट्ज़ (Hertz), प्रतीक: Hz</span></div>
+                <div class="mcq"><span class="question">8. धारिता (Capacitance) की SI इकाई क्या है?</span><br><span class="answer">फ़ैरेड (Farad), प्रतीक: F</span></div>
+                <div class="mcq"><span class="question">9. प्रेरकत्व (Inductance) की SI इकाई क्या है?</span><br><span class="answer">हेनरी (Henry), प्रतीक: H</span></div>
+                <div class="mcq"><span class="question">10. चालकता (Conductance) की SI इकाई क्या है?</span><br><span class="answer">सीमेंस (Siemens), प्रतीक: S (या Mho)</span></div>
+                <div class="mcq"><span class="question">11. ज्योति तीव्रता (Luminous Intensity) की SI इकाई क्या है?</span><br><span class="answer">कैंडेला (Candela), प्रतीक: cd</span></div>
+                <div class="mcq"><span class="question">12. चुंबकीय फ्लक्स (Magnetic Flux) की SI इकाई क्या है?</span><br><span class="answer">वेबर (Weber), प्रतीक: Wb</span></div>
+                <div class="mcq"><span class="question">13. चुंबकीय फ्लक्स घनत्व (Magnetic Flux Density) की SI इकाई क्या है?</span><br><span class="answer">टेस्ला (Tesla), प्रतीक: T</span></div>
+                <div class="mcq"><span class="question">14. प्रतिरोधकता (Resistivity) की इकाई क्या है?</span><br><span class="answer">ओम-मीटर (Ohm-meter), प्रतीक: Ω-m</span></div>
+                <div class="mcq"><span class="question">15. विद्युत ऊर्जा की व्यावसायिक इकाई (Commercial Unit) क्या है?</span><br><span class="answer">किलोवाट-घंटा (Kilowatt-hour), प्रतीक: kWh</span></div>
+                <div class="mcq"><span class="question">16. शक्ति गुणांक (Power Factor) की इकाई क्या है?</span><br><span class="answer">इसकी कोई इकाई नहीं है (यह आयामहीन है)।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">II. इकाइयों के उपसर्ग और रूपांतरण (Unit Prefixes and Conversions)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">17. 1 किलो (kilo) का मान कितना होता है?</span><br><span class="answer">10³ (1000)</span></div>
+                <div class="mcq"><span class="question">18. 1 मेगा (Mega) का मान कितना होता है?</span><br><span class="answer">10⁶ (1,000,000)</span></div>
+                <div class="mcq"><span class="question">19. 1 गीगा (Giga) का मान कितना होता है?</span><br><span class="answer">10⁹</span></div>
+                <div class="mcq"><span class="question">20. 1 मिली (milli) का मान कितना होता है?</span><br><span class="answer">10⁻³ (0.001)</span></div>
+                <div class="mcq"><span class="question">21. 1 माइक्रो (micro) का मान कितना होता है?</span><br><span class="answer">10⁻⁶ (0.000001)</span></div>
+                <div class="mcq"><span class="question">22. 1 नैनो (nano) का मान कितना होता है?</span><br><span class="answer">10⁻⁹</span></div>
+                <div class="mcq"><span class="question">23. 1 पीको (pico) का मान कितना होता है?</span><br><span class="answer">10⁻¹²</span></div>
+                <div class="mcq"><span class="question">24. 1 किलोवाट (kW) में कितने वाट होते हैं?</span><br><span class="answer">1000 W</span></div>
+                <div class="mcq"><span class="question">25. 1 मिलीएम्पीयर (mA) में कितने एम्पीयर होते हैं?</span><br><span class="answer">10⁻³ A (0.001 A)</span></div>
+                <div class="mcq"><span class="question">26. 1 माइक्रोफ़ैरेड (μF) में कितने फ़ैरेड होते हैं?</span><br><span class="answer">10⁻⁶ F</span></div>
+                <div class="mcq"><span class="question">27. 1 जूल (J) किसके बराबर होता है (शक्ति और समय के संदर्भ में)?</span><br><span class="answer">1 वाट-सेकंड (Watt-second)</span></div>
+                <div class="mcq"><span class="question">28. 1 किलोवाट-घंटा (kWh) में कितने जूल होते हैं?</span><br><span class="answer">3.6 × 10⁶ जूल (3.6 million Joules)</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">III. मानक विद्युत प्रतीक (Standard Electrical Symbols)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">29. प्रतिरोधक (Resistor) का प्रतीक क्या है?</span><br><span class="answer">एक ज़िगज़ैग रेखा का प्रतीक।</span></div>
+                <div class="mcq"><span class="question">30. वेरिएबल प्रतिरोधक (Variable Resistor) या रियोस्टेट (Rheostat) का प्रतीक क्या है?</span><br><span class="answer">प्रतिरोधक पर एक तीर।</span></div>
+                <div class="mcq"><span class="question">31. स्थिर (Fixed) संधारित्र (Capacitor) का प्रतीक क्या है?</span><br><span class="answer">दो समानांतर रेखाएँ (एक घुमावदार हो सकती है)।</span></div>
+                <div class="mcq"><span class="question">32. प्रेरक (Inductor) या कुण्डली (Coil) का प्रतीक क्या है?</span><br><span class="answer">एक कुंडलीदार तार का प्रतीक।</span></div>
+                <div class="mcq"><span class="question">33. डायोड (Diode) का प्रतीक क्या है?</span><br><span class="answer">एक तीर जो एक रेखा की ओर इशारा करता है।</span></div>
+                <div class="mcq"><span class="question">34. LED (Light Emitting Diode) का प्रतीक क्या है?</span><br><span class="answer">डायोड प्रतीक जिसके बाहर की ओर दो तीर हों।</span></div>
+                <div class="mcq"><span class="question">35. ज़ेनर डायोड (Zener Diode) का प्रतीक क्या है?</span><br><span class="answer">डायोड प्रतीक जिसके अंत में Z जैसा रेखा हो।</span></div>
+                <div class="mcq"><span class="question">36. बैटरी या DC वोल्टेज स्रोत (Battery or DC Voltage Source) का प्रतीक क्या है?</span><br><span class="answer">एक लंबी और एक छोटी समानांतर रेखा।</span></div>
+                <div class="mcq"><span class="question">37. AC वोल्टेज स्रोत (AC Voltage Source) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर साइन वेव (sine wave) हो।</span></div>
+                <div class="mcq"><span class="question">38. स्विच (खुला) (Switch (Open)) का प्रतीक क्या है?</span><br><span class="answer">दो संपर्क बिंदु और एक खुली रेखा।</span></div>
+                <div class="mcq"><span class="question">39. भू-संपर्कन या अर्थ (Ground/Earth) का प्रतीक क्या है?</span><br><span class="answer">तीन समानांतर रेखाएं जो लंबाई में घटती जाती हैं।</span></div>
+                <div class="mcq"><span class="question">40. फ्यूज (Fuse) का प्रतीक क्या है?</span><br><span class="answer">एक आयत जिसमें बीच में एक रेखा हो।</span></div>
+                <div class="mcq"><span class="question">41. विद्युत बल्ब या लैंप (Lamp/Bulb) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'X' हो।</span></div>
+                <div class="mcq"><span class="question">42. ट्रांसफार्मर (Transformer) का प्रतीक क्या है?</span><br><span class="answer">दो कुण्डलियां जो समानांतर रेखाओं से अलग की गई हैं।</span></div>
+                <div class="mcq"><span class="question">43. सिंगल पोल, डबल थ्रो स्विच (SPDT Switch) का प्रतीक क्या है?</span><br><span class="answer">एक इनपुट और दो आउटपुट के साथ स्विच।</span></div>
+                <div class="mcq"><span class="question">44. बजर (Buzzer) का प्रतीक क्या है?</span><br><span class="answer">ध्वनि तरंगों के साथ आयत।</span></div>
+                <div class="mcq"><span class="question">45. विद्युत मोटर (Electric Motor) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'M' हो।</span></div>
+                <div class="mcq"><span class="question">46. विद्युत जनरेटर (Electric Generator) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'G' हो।</span></div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">IV. मापन उपकरण प्रतीक (Measurement Instrument Symbols)</div>
+            <div class="mcq-list">
+                <div class="mcq"><span class="question">47. एमीटर (Ammeter) (धारा मापने के लिए) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'A' हो।</span></div>
+                <div class="mcq"><span class="question">48. वोल्टमीटर (Voltmeter) (वोल्टेज मापने के लिए) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'V' हो।</span></div>
+                <div class="mcq"><span class="question">49. ओह्ममीटर (Ohmmeter) (प्रतिरोध मापने के लिए) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'Ω' हो।</span></div>
+                <div class="mcq"><span class="question">50. गैल्वेनोमीटर (Galvanometer) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'G' हो।</span></div>
+                <div class="mcq"><span class="question">51. वाटमीटर (Wattmeter) (शक्ति मापने के लिए) का प्रतीक क्या है?</span><br><span class="answer">एक वृत्त जिसके अंदर 'W' हो।</span></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
