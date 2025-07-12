@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>DC Machines: Generators and Motors - ITI Electrician</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ DC Machines: Generators and Motors</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. DC Machine Construction (DC मशीन की संरचना)</h2>
+      <p>एक DC मशीन (जनरेटर या मोटर) में मुख्य भाग समान होते हैं:</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>भाग (Part)</th>
+            <th>कार्य (Function)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yoke (योक)</td>
+            <td>बाहरी आवरण, मशीन को सुरक्षा और मैग्नेटिक फ्लक्स पथ प्रदान करता है।</td>
+          </tr>
+          <tr>
+            <td>Field Poles & Windings</td>
+            <td>मुख्य मैग्नेटिक फील्ड (Magnetic Field) उत्पन्न करते हैं।</td>
+          </tr>
+          <tr>
+            <td>Armature (आर्मेचर)</td>
+            <td>घूमने वाला भाग, जिसमें आर्मेचर वाइंडिंग होती है।</td>
+          </tr>
+          <tr>
+            <td>Commutator (कम्यूटेटर)</td>
+            <td>स्प्लिट रिंग्स (Split Rings), जनरेटर में AC को DC में और मोटर में DC को AC में बदलता है।</td>
+          </tr>
+          <tr>
+            <td>Brushes (ब्रश)</td>
+            <td>कम्यूटेटर से करंट एकत्र (collect) या प्रदान (supply) करते हैं।</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. DC Generator (DC जनरेटर)</h2>
+      <p>यह यांत्रिक ऊर्जा (Mechanical Energy) को विद्युत ऊर्जा (Electrical Energy) में बदलता है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ मुख्य सिद्धांत:
+      </div>
+      <ul>
+        <li><strong>सिद्धांत:</strong> फैराडे का विद्युत चुम्बकीय प्रेरण का नियम (Faraday’s Law of Electromagnetic Induction)।</li>
+        <li><strong>नियम:</strong> उत्पन्न EMF (इलेक्ट्रोमोटिव फोर्स) की दिशा निर्धारित करने के लिए <strong>फ्लेमिंग का दाएँ हाथ का नियम (Fleming's Right-Hand Rule)</strong> उपयोग होता है।</li>
+        <li><strong>आर्मेचर रिएक्शन (Armature Reaction):</strong> आर्मेचर करंट द्वारा उत्पन्न फ्लक्स का मुख्य फील्ड फ्लक्स पर प्रभाव।</li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. DC Motor (DC मोटर)</h2>
+      <p>यह विद्युत ऊर्जा (Electrical Energy) को यांत्रिक ऊर्जा (Mechanical Energy) में बदलता है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ मुख्य सिद्धांत:
+      </div>
+      <ul>
+        <li><strong>सिद्धांत:</strong> मोटर एक्शन (Motor Action) या लॉरेंत्ज़ फोर्स (Lorentz Force)। जब करंट-ले जाने वाले कंडक्टर को मैग्नेटिक फील्ड में रखा जाता है, तो उस पर एक बल लगता है।</li>
+        <li><strong>नियम:</strong> मोटर के घूमने की दिशा निर्धारित करने के लिए <strong>फ्लेमिंग का बाएँ हाथ का नियम (Fleming's Left-Hand Rule)</strong> उपयोग होता है।</li>
+        <li><strong>बैक EMF (Back EMF):</strong> मोटर के घूमने से आर्मेचर में एक विपरीत EMF उत्पन्न होता है जो सप्लाई वोल्टेज का विरोध करता है।</li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 Quick Practice Questions (Revision के लिए)</div>
+      <ol class="question-list">
+        <li>DC जनरेटर किस ऊर्जा को किस ऊर्जा में बदलता है?
+          <span class="answer">➡️ उत्तर: यांत्रिक ऊर्जा को विद्युत ऊर्जा में।</span>
+        </li>
+        <li>DC मोटर किस नियम पर कार्य करती है?
+          <span class="answer">➡️ उत्तर: फ्लेमिंग का बाएँ हाथ का नियम।</span>
+        </li>
+        <li>DC मशीन में Commutator का कार्य क्या है?
+          <span class="answer">➡️ उत्तर: AC को DC में या DC को AC में बदलना।</span>
+        </li>
+        <li>DC जनरेटर का सिद्धांत क्या है?
+          <span class="answer">➡️ उत्तर: फैराडे का इलेक्ट्रोमैग्नेटिक इंडक्शन का नियम।</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
