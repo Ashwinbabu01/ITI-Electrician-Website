@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अश्विन चौहान | फ्रंट एंड डेवलपर</title>
+    
+    <style>
+        /* --- फॉन्ट्स और सामान्य सेटिंग्स --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+        :root {
+            --primary-bg: #0a0a1f;
+            --card-bg: rgba(15, 17, 41, 0.6);
+            --text-color: #e0e0e0;
+            --accent-color: #00d9ff;
+            --glow-color: rgba(0, 217, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--primary-bg);
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 25px 25px;
+            color: var(--text-color);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* --- 3D सीन का कंटेनर --- */
+        .scene {
+            width: 100%;
+            max-width: 380px;
+            height: 600px;
+            perspective: 1500px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: rotateScene 25s infinite linear;
+        }
+
+        @keyframes rotateScene {
+            from { transform: rotateY(-5deg) rotateX(2deg); }
+            to { transform: rotateY(5deg) rotateX(-2deg); }
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+            transform: translateZ(40px);
+        }
+
+        /* --- कार्ड के अंदर की चीज़ें --- */
+        .logo-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            transform: translateZ(80px);
+        }
+
+        .logo-container img {
+            max-width: 150px;
+            filter: drop-shadow(0 0 15px var(--glow-color));
+        }
+
+        /* यहाँ बदलाव किया गया है */
+        .profile-image-container {
+            width: 180px;
+            height: 180px;
+            aspect-ratio: 1 / 1; /* यह लाइन सुनिश्चित करती है कि बॉक्स हमेशा वर्गाकार (square) रहे */
+            flex-shrink: 0;      /* यह लाइन बॉक्स को पिचकने से रोकती है */
+            border-radius: 50%;  /* वर्गाकार बॉक्स को गोल बनाता है */
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 25px var(--glow-color);
+            transform: translateZ(60px);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.5);
+            object-position: 50% 20%;
+        }
+
+        .info-text {
+            text-align: center;
+            transform: translateZ(50px);
+        }
+
+        .info-text h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #fff;
+            letter-spacing: 2px;
+            transition: font-size 0.3s;
+        }
+
+        .info-text .bio {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            min-height: 40px;
+        }
+        
+        .bio-text {
+            border-right: 2px solid var(--accent-color);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 4s steps(44, end) forwards, blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color); }
+        }
+        
+        .social-links {
+            margin-top: auto;
+            display: flex;
+            gap: 20px;
+            transform: translateZ(70px);
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            transition: color 0.3s, transform 0.3s, text-shadow 0.3s, font-size 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2) translateY(-5px);
+            text-shadow: 0 0 15px var(--glow-color);
+        }
+        
+        @media (max-width: 480px) {
+            .scene {
+                height: 90vh;
+                max-width: 100%;
+            }
+
+            .card-face {
+                padding: 20px;
+            }
+
+            .logo-container img {
+                max-width: 120px;
+            }
+
+            .profile-image-container {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 20px;
+            }
+
+            .info-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .info-text .bio {
+                font-size: 0.8rem;
+            }
+
+            .bio-text {
+                animation: none;
+                animation: typing 4s steps(44, end) forwards, blink-caret .75s step-end infinite;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="scene">
+        <div class="card">
+            <div class="card-face">
+                
+                <div class="logo-container">
+                    <img src="./assets/logo.png" alt="Ashwin Logo">
+                </div>
+                
+                <div class="profile-image-container">
+                    <img src="./assets/profile.png" alt="Ashwin Chauhan">
+                </div>
+                
+                <div class="info-text">
+                    <h1>Ashwin Chauhan</h1>
+                    <p class="bio">
+                        <span class="bio-text">Front end web developer creates engaging websites.</span>
+                    </p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
