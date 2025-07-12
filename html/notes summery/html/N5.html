@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>चालक, कुचालक और केबल – ITI इलेक्ट्रीशियन नोट्स</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS from N3.html for styling */
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💡 चालक (Conductors), कुचालक (Insulators) और केबल (Cables)</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. चालक (Conductors)</h2>
+      <p>वे पदार्थ जो विद्युत धारा को अपने माध्यम से आसानी से प्रवाहित होने देते हैं, चालक कहलाते हैं। चालकों का प्रतिरोध बहुत कम होता है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ मुख्य चालक पदार्थ:
+      </div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>पदार्थ</th>
+            <th>विशेषता</th>
+            <th>उपयोग</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>तांबा (Copper)</td><td>उच्च चालकता, सस्ता और मजबूत</td><td>विद्युत वायरिंग, मोटर वाइंडिंग</td></tr>
+          <tr><td>एल्युमीनियम (Aluminum)</td><td>कम वजन, सस्ता</td><td>ओवरहेड लाइनें, बस बार</td></tr>
+          <tr><td>चांदी (Silver)</td><td>सर्वश्रेष्ठ चालक, महंगा</td><td>विशेष संपर्क बिंदु, इलेक्ट्रॉनिक सर्किट</td></tr>
+          <tr><td>सोना (Gold)</td><td>उच्च संक्षारण प्रतिरोध</td><td>उच्च गुणवत्ता वाले संपर्क</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. कुचालक (Insulators)</h2>
+      <p>वे पदार्थ जो विद्युत धारा के प्रवाह का विरोध करते हैं और जिनका प्रतिरोध बहुत अधिक होता है, कुचालक (इंसुलेटर) कहलाते हैं। ये बिजली के झटके से बचाने और चालकों को अलग रखने के लिए उपयोग होते हैं।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ सामान्य कुचालक पदार्थ:
+      </div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>कुचालक</th>
+            <th>विशेषता</th>
+            <th>उपयोग</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>PVC (पॉलीविनाइल क्लोराइड)</td><td>लचीला और मजबूत</td><td>वायरिंग और केबल शीथिंग</td></tr>
+          <tr><td>रबर (Rubber)</td><td>उत्कृष्ट इन्सुलेशन</td><td>केबल जैकेट, सुरक्षा उपकरण</td></tr>
+          <tr><td>मायका (Mica)</td><td>उच्च तापमान प्रतिरोध</td><td>हीटिंग उपकरण, कम्यूटेटर</td></tr>
+          <tr><td>पोर्सिलेन (Porcelain)</td><td>उच्च यांत्रिक शक्ति</td><td>ट्रांसमिशन लाइन इंसुलेटर</td></tr>
+          <tr><td>कांच (Glass)</td><td>सफाई में आसान, पारदर्शी</td><td>ओवरहेड लाइन इंसुलेटर</td></tr>
+          <tr><td>पेपर (Paper)</td><td>तेल में भिगोकर उपयोग</td><td>केबल, कैपेसिटर</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. केबल (Cables)</h2>
+      <p>केबल एक या एक से अधिक चालकों का समूह है, जो कुचालक पदार्थों से ढके होते हैं और सुरक्षात्मक परत से सुरक्षित होते हैं।</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>केबल का भाग</th>
+            <th>विवरण</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>कोर (Core)</td>
+            <td>केबल का चालक भाग (जैसे तांबा या एल्युमीनियम)</td>
+          </tr>
+          <tr>
+            <td>इंसुलेशन (Insulation)</td>
+            <td>चालक को घेरने वाली कुचालक परत (जैसे PVC, रबर)</td>
+          </tr>
+          <tr>
+            <td>शीथ (Sheath)</td>
+            <td>केबल को नमी और यांत्रिक क्षति से बचाने वाली बाहरी परत</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 त्वरित अभ्यास प्रश्न (Quick Revision)</div>
+      <ol class="question-list">
+        <li>विद्युत धारा के प्रवाह में कौन से पदार्थ न्यूनतम प्रतिरोध प्रदान करते हैं?
+          <span class="answer">➡️ उत्तर: चालक (Conductors)</span>
+        </li>
+        <li>केबल का मुख्य चालक भाग क्या कहलाता है?
+          <span class="answer">➡️ उत्तर: कोर (Core)</span>
+        </li>
+        <li>किस धातु का उपयोग आमतौर पर ओवरहेड ट्रांसमिशन लाइनों के लिए किया जाता है?
+          <span class="answer">➡️ उत्तर: एल्युमीनियम (Aluminum)</span>
+        </li>
+        <li>पोर्सिलेन (Porcelain) किस प्रकार का पदार्थ है?
+          <span class="answer">➡️ उत्तर: कुचालक (Insulator)</span>
+        </li>
+        <li>सबसे अच्छा विद्युत चालक कौन सा है?
+          <span class="answer">➡️ उत्तर: चांदी (Silver)</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
