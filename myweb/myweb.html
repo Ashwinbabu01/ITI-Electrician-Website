@@ -33,7 +33,10 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
             background-size: 25px 25px;
             color: var(--text-color);
-            overflow: hidden;
+            /* --- Page Scrollability Change --- */
+            /* Removed 'overflow: hidden;' to allow scrolling */
+            /* overflow: hidden; */ 
+            /* -------------------------------- */
             padding: 20px;
         }
 
@@ -212,6 +215,10 @@
             color:white ;
             font-weight:bold;
             margin: 50px 7px;
+            /* Added CSS for the cursor blink effect */
+            border-right: 2px solid var(--accent-color);
+            white-space: nowrap;
+            overflow: hidden;
         }
 
     </style>
@@ -238,7 +245,7 @@
                         <span class="bio-text">Front end web developer creates engaging websites.</span>
                     </p>
                 </div>
-                <h3 class="social-media">⚡Social media links 👇</h3>
+                <h3 class="social-media"></h3>
                 <div class="social-links">
                     <a href="https://www.instagram.com/ashwintherock?igsh=MTVxYzN0bW9waDBpZw==" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -250,5 +257,27 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const socialMediaTextElement = document.querySelector('.social-media');
+            const textToType = '⚡Social media links 👇';
+            let i = 0;
+            const typingSpeed = 70; // Typing speed in milliseconds
+
+            function typeWriter() {
+                if (i < textToType.length) {
+                    socialMediaTextElement.textContent += textToType.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, typingSpeed);
+                } else {
+                    // When typing is complete, remove the blinking cursor effect (border-right)
+                    socialMediaTextElement.style.borderRight = 'none';
+                }
+            }
+
+            // Start the typing animation for the social media link text
+            typeWriter();
+        });
+    </script>
 </body>
 </html>
