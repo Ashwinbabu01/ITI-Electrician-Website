@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Electrical Symbols, Units & SI System – Royal Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Electrical Symbols, Units & SI System</h1>
+    <p>महत्वपूर्ण संक्षिप्त नोट्स • Royal Guide</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. Electrical Symbols (इलेक्ट्रिकल संकेत)</h2>
+      <p>विद्युत आरेखों में विभिन्न उपकरणों या घटकों को चित्रित करने के लिए मानकीकृत सिंबॉल्स का उपयोग किया जाता है। इससे वायरिंग डाइग्राम पढ़ना आसान होता है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ कुछ सामान्य Electrical Symbols:
+      </div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>उपकरण का नाम</th>
+            <th>प्रतीक (Symbol)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cell (सेल)</td><td>─</td></tr>
+          <tr><td>Battery (बैटरी)</td><td>─</td></tr>
+          <tr><td>Switch (स्विच)</td><td>◯────◯ (खुला)</td></tr>
+          <tr><td>Lamp (बल्ब)</td><td>(X)</td></tr>
+          <tr><td>Resistor (प्रतिरोधक)</td><td>─//─</td></tr>
+          <tr><td>Earth (अर्थिंग)</td><td>⏚</td></tr>
+          <tr><td>Fuse (फ्यूज)</td><td>─०─</td></tr>
+          <tr><td>Ground</td><td>⏚</td></tr>
+          <tr><td>AC Supply</td><td>~</td></tr>
+          <tr><td>DC Supply</td><td>—</td></tr>
+          <tr><td>Capacitor</td><td>─| |─</td></tr>
+          <tr><td>Transformer</td><td>─((</td></tr>
+          <tr><td>Motor</td><td>Ⓜ</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. Units & SI System (मात्रक और एसआई प्रणाली)</h2>
+      <p>SI System (International System of Units) एक मानक प्रणाली है जो विज्ञान और तकनीकी क्षेत्र में उपयोग की जाती है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ मुख्य मात्रक:
+      </div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>भौतिक राशि</th>
+            <th>नाम</th>
+            <th>SI मात्रक</th>
+            <th>प्रतीक</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Current (धारा)</td><td>Ampere</td><td>A</td><td>A</td></tr>
+          <tr><td>Voltage (वोल्टता)</td><td>Volt</td><td>V</td><td>V</td></tr>
+          <tr><td>Resistance (प्रतिरोध)</td><td>Ohm</td><td>Ω</td><td>Ω</td></tr>
+          <tr><td>Power (शक्ति)</td><td>Watt</td><td>W</td><td>W</td></tr>
+          <tr><td>Energy (ऊर्जा)</td><td>Joule</td><td>J</td><td>J</td></tr>
+          <tr><td>Frequency (आवृत्ति)</td><td>Hertz</td><td>Hz</td><td>Hz</td></tr>
+          <tr><td>Capacitance</td><td>Farad</td><td>F</td><td>F</td></tr>
+          <tr><td>Inductance</td><td>Henry</td><td>H</td><td>H</td></tr>
+          <tr><td>Charge (आवेश)</td><td>Coulomb</td><td>C</td><td>C</td></tr>
+          <tr><td>Time (समय)</td><td>Second</td><td>s</td><td>s</td></tr>
+          <tr><td>Temperature</td><td>Kelvin</td><td>K</td><td>K</td></tr>
+          <tr><td>Length</td><td>Metre</td><td>m</td><td>m</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. Power और Energy के बीच अंतर</h2>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>विशेषता</th>
+            <th>Power (शक्ति)</th>
+            <th>Energy (ऊर्जा)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>परिभाषा</td>
+            <td>कार्य की दर</td>
+            <td>कार्य की कुल मात्रा</td>
+          </tr>
+          <tr>
+            <td>SI Unit</td>
+            <td>Watt (W)</td>
+            <td>Joule (J)</td>
+          </tr>
+          <tr>
+            <td>सूत्र</td>
+            <td>P = VI</td>
+            <td>E = P × t</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>4. Prefixes (पूर्वगणक)</h2>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Prefix</th>
+            <th>मान (Value)</th>
+            <th>प्रतीक</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Milli</td><td>10⁻³</td><td>m</td></tr>
+          <tr><td>Micro</td><td>10⁻⁶</td><td>µ</td></tr>
+          <tr><td>Kilo</td><td>10³</td><td>k</td></tr>
+          <tr><td>Mega</td><td>10⁶</td><td>M</td></tr>
+          <tr><td>Giga</td><td>10⁹</td><td>G</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 Quick Practice Questions (Revision के लिए)</div>
+      <ol class="question-list">
+        <li>वोल्टेज की SI इकाई क्या है?
+          <span class="answer">➡️ उत्तर: Volt (V)</span>
+        </li>
+        <li>ओम का प्रतीक क्या है?
+          <span class="answer">➡️ उत्तर: Ω</span>
+        </li>
+        <li>करंट का मात्रक और प्रतीक क्या है?
+          <span class="answer">➡️ उत्तर: Ampere (A)</span>
+        </li>
+        <li>Earth का सिंबल क्या है?
+          <span class="answer">➡️ उत्तर: ⏚</span>
+        </li>
+        <li>Capacitor का सिंबल क्या होता है?
+          <span class="answer">➡️ उत्तर: ─| |─</span>
+        </li>
+        <li>शक्ति (Power) का SI Unit क्या है?
+          <span class="answer">➡️ उत्तर: Watt (W)</span>
+        </li>
+        <li>यदि वोल्टेज = 12V और करंट = 2A हो, तो शक्ति कितनी होगी?
+          <span class="answer">➡️ उत्तर: P = VI = 12×2 = 24W</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
