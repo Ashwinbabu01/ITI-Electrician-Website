@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Transformer Notes - ITI Electrician Trade Theory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚙️ Transformer: Principle, Construction & Testing</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स</p>
+  </header>
+
+  <main>
+    <section>
+        <h2><span class="title-emoji">🔹</span>1. Principle (सिद्धांत)</h2>
+        <p>ट्रांसफार्मर एक स्थिर (Static) उपकरण है जो बिना फ्रीक्वेंसी बदले वोल्टेज के स्तर को कम या ज्यादा करने के लिए इलेक्ट्रोमैग्नेटिक इंडक्शन (विद्युत चुम्बकीय प्रेरण) के सिद्धांत का उपयोग करता है। यह म्यूचुअल इंडक्शन (पारस्परिक प्रेरण) के सिद्धांत पर कार्य करता है।</p>
+        <div class="other-points" style="margin-bottom:1rem;">
+            ✅ मुख्य बिंदु:
+        </div>
+        <ul>
+            <li>यह केवल AC सप्लाई पर काम करता है।</li>
+            <li>यह वोल्टेज को स्टेप-अप (Step-up) या स्टेप-डाउन (Step-down) कर सकता है।</li>
+            <li>यह पावर और फ्रीक्वेंसी को नहीं बदलता।</li>
+        </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+        <h2><span class="title-emoji">🔹</span>2. Construction (संरचना)</h2>
+        <p>ट्रांसफार्मर मुख्य रूप से दो भागों से मिलकर बना होता है: कोर और वाइंडिंग।</p>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>भाग (Part)</th>
+                    <th>सामग्री (Material)</th>
+                    <th>कार्य (Function)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Core (कोर)</td>
+                    <td>सिलिकॉन स्टील (Laminated Silicon Steel)</td>
+                    <td>मैग्नेटिक फ्लक्स (Magnetic Flux) पथ प्रदान करता है।</td>
+                </tr>
+                <tr>
+                    <td>Windings (वाइंडिंग्स)</td>
+                    <td>तांबा या एल्युमीनियम (Copper or Aluminium)</td>
+                    <td>प्राइमरी और सेकेंडरी कॉइल्स, जो इनपुट/आउटपुट सप्लाई से जुड़े होते हैं।</td>
+                </tr>
+                <tr>
+                    <td>Transformer Oil (ट्रांसफार्मर तेल)</td>
+                    <td>मिनरल ऑयल (Mineral Oil)</td>
+                    <td>इंसुलेशन (Insulation) और कूलिंग (Cooling) प्रदान करता है।</td>
+                </tr>
+                <tr>
+                    <td>Conservator Tank</td>
+                    <td>—</td>
+                    <td>तापमान परिवर्तन के कारण तेल के विस्तार के लिए जगह।</td>
+                </tr>
+                <tr>
+                    <td>Breather</td>
+                    <td>सिलिका जेल (Silica Gel)</td>
+                    <td>तेल टैंक में नमी (Moisture) को प्रवेश करने से रोकता है।</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+        <h2><span class="title-emoji">🔹</span>3. Key Ratios (प्रमुख अनुपात)</h2>
+        <p>ट्रांसफॉर्मेशन अनुपात (K) वोल्टेज और टर्न (Turns) के बीच संबंध दर्शाता है।</p>
+        <div class="formula">
+            $K = N_2/N_1 = V_2/V_1 = I_1/I_2$
+        </div>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>अनुपात</th>
+                    <th>परिभाषा</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$N_1, N_2$</td>
+                    <td>प्राइमरी और सेकेंडरी वाइंडिंग में टर्न की संख्या</td>
+                </tr>
+                <tr>
+                    <td>$V_1, V_2$</td>
+                    <td>प्राइमरी और सेकेंडरी वाइंडिंग वोल्टेज</td>
+                </tr>
+                <tr>
+                    <td>$I_1, I_2$</td>
+                    <td>प्राइमरी और सेकेंडरी वाइंडिंग करंट</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+        <h2><span class="title-emoji">🔹</span>4. Testing of Transformers (ट्रांसफार्मर का परीक्षण)</h2>
+        <p>ट्रांसफार्मर की कार्यक्षमता और स्थिति की जांच के लिए विभिन्न परीक्षण किए जाते हैं।</p>
+        <div class="other-points" style="margin-bottom:1rem;">
+            ✅ प्रमुख परीक्षण:
+        </div>
+        <ul>
+            <li>
+                <strong>Open Circuit Test (खुला सर्किट परीक्षण):</strong> कोर लॉस (Core Loss) या आयरन लॉस (Iron Loss) ज्ञात करने के लिए।
+            </li>
+            <li>
+                <strong>Short Circuit Test (लघु सर्किट परीक्षण):</strong> कॉपर लॉस (Copper Loss) या फुल लोड लॉस (Full Load Loss) ज्ञात करने के लिए।
+            </li>
+            <li>
+                <strong>Insulation Resistance Test:</strong> वाइंडिंग के इंसुलेशन की जांच के लिए (मेगर का उपयोग करके)।
+            </li>
+            <li>
+                <strong>Polarity Test:</strong> यह सुनिश्चित करने के लिए कि वाइंडिंग सही ढंग से जुड़ी हुई हैं।
+            </li>
+        </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+        <div class="question-title">📌 Quick Practice Questions (Revision के लिए)</div>
+        <ol class="question-list">
+            <li>ट्रांसफार्मर किस सिद्धांत पर कार्य करता है?
+                <span class="answer">➡️ उत्तर: म्यूचुअल इंडक्शन (Mutual Induction)</span>
+            </li>
+            <li>ट्रांसफार्मर कोर किस सामग्री से बना होता है?
+                <span class="answer">➡️ उत्तर: लैमिनेटेड सिलिकॉन स्टील (Laminated Silicon Steel)</span>
+            </li>
+            <li>ट्रांसफार्मर तेल का मुख्य कार्य क्या है?
+                <span class="answer">➡️ उत्तर: कूलिंग (Cooling) और इंसुलेशन (Insulation)</span>
+            </li>
+            <li>शॉर्ट सर्किट परीक्षण क्यों किया जाता है?
+                <span class="answer">➡️ उत्तर: कॉपर लॉस (Copper Loss) ज्ञात करने के लिए</span>
+            </li>
+            <li>ब्रीथर में कौन सा पदार्थ इस्तेमाल होता है?
+                <span class="answer">➡️ उत्तर: सिलिका जेल (Silica Gel)</span>
+            </li>
+        </ol>
+    </section>
+  </main>
+
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
