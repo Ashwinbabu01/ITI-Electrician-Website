@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>ITI इलेक्ट्रीशियन: विद्युत धारा, वोल्टेज, प्रतिरोध MCQ Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+      background: linear-gradient(135deg, #16a085 0%, #f4d03f 100%);
+      margin: 0; padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 12px 32px rgba(44,62,80,0.25);
+      padding: 36px 24px 24px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #16a085;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    #timer {
+      position: absolute;
+      top: 18px;
+      right: 28px;
+      font-weight: 600;
+      font-size: 1.2em;
+      background: #f4d03f;
+      color: #333;
+      padding: 8px 18px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(44,62,80,0.1);
+      z-index: 2;
+    }
+    .question-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(44,62,80,0.08);
+      padding: 22px 18px 18px 18px;
+      margin-bottom: 26px;
+      animation: fadeIn 0.8s;
+      min-height: 180px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .options label {
+      display: block;
+      background: #e1f7e7;
+      margin: 10px 0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-size: 1.08em;
+      border: 2px solid transparent;
+    }
+    .options input[type="radio"]:checked + label {
+      background: #16a085;
+      color: #fff;
+      border: 2px solid #138d75;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #16a085, #f4d03f);
+      color: #fff;
+      padding: 13px 36px;
+      border: none;
+      border-radius: 28px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 18px auto 0 auto;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 18px rgba(44,62,80,0.20);
+      text-align: center;
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    #result-section {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: #f4d03f;
+      border-radius: 12px;
+      color: #333;
+      margin-top: 16px;
+      animation: fadeIn 0.7s;
+    }
+    .score {
+      font-size: 2.2em;
+      color: #16a085;
+      font-weight: bold;
+    }
+    #restart-btn {
+      background: linear-gradient(90deg, #f4d03f, #16a085);
+      color: #fff;
+      border: none;
+      font-size: 1.1em;
+      padding: 10px 26px;
+      border-radius: 20px;
+      margin-top: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.12);
+    }
+    @media (max-width: 700px) {
+      .container { margin: 10px 3px; padding: 16px 4px;}
+      #timer { right: 8px; top: 8px;}
+      .question-card { padding: 10px 6px;}
+    }
+    #progress-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: #e1f7e7;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    #progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #16a085, #f4d03f);
+      width: 0%;
+      border-radius: 10px;
+      transition: width 0.4s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ITI इलेक्ट्रीशियन:<br> विद्युत धारा, वोल्टेज, प्रतिरोध MCQ Test</h1>
+    <div id="timer"></div>
+    <div id="progress-bar-bg"><div id="progress-bar"></div></div>
+    <div id="test-section"></div>
+    <div id="result-section">
+      <h2>आपका परिणाम</h2>
+      <div class="score" id="score"></div>
+      <div id="result-msg"></div>
+      <button id="restart-btn">फिर से शुरू करें</button>
+    </div>
+  </div>
+  <script>
+    // विद्युत धारा, वोल्टेज, प्रतिरोध, ओम का नियम, सर्किट और मूल तत्व पर MCQs
+    const questions = [
+      // Current (धारा)
+      { q: "विद्युत धारा क्या है?", opts: ["इलेक्ट्रॉनों का प्रवाह", "प्रोटॉन का प्रवाह", "ऊष्मा का प्रवाह", "प्रकाश का प्रवाह"], ans: 0 },
+      { q: "विद्युत धारा की SI इकाई क्या है?", opts: ["वोल्ट", "एम्पीयर", "ओम", "जूल"], ans: 1 },
+      { q: "विद्युत धारा को मापने के लिए किस उपकरण का उपयोग किया जाता है?", opts: ["वोल्टमीटर", "एमीटर", "गैल्वेनोमीटर", "मल्टीमीटर"], ans: 1 },
+      { q: "एमीटर को परिपथ में कैसे जोड़ा जाता है?", opts: ["समांतर क्रम", "श्रेणी क्रम", "मिश्रित क्रम", "कोई फर्क नहीं"], ans: 1 },
+      { q: "एक एम्पीयर किसके बराबर होता है?", opts: ["1 जूल प्रति सेकंड", "1 कूलम्ब प्रति सेकंड", "1 वोल्ट प्रति सेकंड", "1 ओम प्रति सेकंड"], ans: 1 },
+      { q: "धारा का प्रवाह किस दिशा में होता है?", opts: ["निम्न विभव से उच्च विभव", "उच्च विभव से निम्न विभव", "ऊर्ध्वाधर दिशा", "कोई निश्चित दिशा नहीं"], ans: 1 },
+      { q: "डीसी धारा का तरंग रूप कैसा होता है?", opts: ["साइन वेव", "सीधी रेखा", "त्रिकोणीय वेव", "स्क्वायर वेव"], ans: 1 },
+      { q: "एसी धारा का तरंग रूप कैसा होता है?", opts: ["साइन वेव", "सीधी रेखा", "स्क्वायर वेव", "पल्स वेव"], ans: 0 },
+      { q: "करंट की उपस्थिति का पता लगाने के लिए किस उपकरण का उपयोग किया जाता है?", opts: ["वोल्टमीटर", "गैल्वेनोमीटर", "एमीटर", "मल्टीमीटर"], ans: 1 },
+      { q: "इलेक्ट्रॉन पर कौन सा आवेश होता है?", opts: ["धनात्मक", "ऋणात्मक", "कोई आवेश नहीं", "दोनों"], ans: 1 },
+      // Voltage (वोल्टेज)
+      { q: "वोल्टेज क्या है?", opts: ["विद्युत दबाव या विभवांतर", "धारा का प्रवाह", "ऊष्मा", "प्रतिरोध"], ans: 0 },
+      { q: "वोल्टेज की SI इकाई क्या है?", opts: ["एम्पीयर", "ओम", "वोल्ट", "जूल"], ans: 2 },
+      { q: "वोल्टेज को मापने के लिए किस उपकरण का उपयोग किया जाता है?", opts: ["वोल्टमीटर", "एमीटर", "गैल्वेनोमीटर", "मल्टीमीटर"], ans: 0 },
+      { q: "वोल्टमीटर को परिपथ में कैसे जोड़ा जाता है?", opts: ["श्रेणी क्रम", "समांतर क्रम", "मिश्रित क्रम", "कोई फर्क नहीं"], ans: 1 },
+      { q: "एक वोल्ट किसके बराबर होता है?", opts: ["1 जूल प्रति कूलम्ब", "1 एम्पीयर प्रति सेकंड", "1 ओम प्रति सेकंड", "1 कूलम्ब प्रति सेकंड"], ans: 0 },
+      { q: "विद्युत वाहक बल (EMF) की इकाई क्या है?", opts: ["एम्पीयर", "ओम", "वोल्ट", "जूल"], ans: 2 },
+      { q: "किसी सर्किट में वोल्टेज ड्रॉप किस कारण होता है?", opts: ["धारा", "प्रतिरोध", "पावर", "ऊष्मा"], ans: 1 },
+      { q: "बैटरी किस ऊर्जा को विद्युत ऊर्जा में बदलती है?", opts: ["ऊष्मा ऊर्जा", "रासायनिक ऊर्जा", "यांत्रिक ऊर्जा", "ध्वनि ऊर्जा"], ans: 1 },
+      // Resistance (प्रतिरोध)
+      { q: "प्रतिरोध क्या है?", opts: ["विद्युत धारा के प्रवाह में बाधा", "धारा का प्रवाह", "ऊष्मा का प्रवाह", "ऊर्जा का प्रवाह"], ans: 0 },
+      { q: "प्रतिरोध की SI इकाई क्या है?", opts: ["एम्पीयर", "ओम", "वोल्ट", "जूल"], ans: 1 },
+      { q: "प्रतिरोध को मापने के लिए किस उपकरण का उपयोग किया जाता है?", opts: ["वोल्टमीटर", "ओममीटर", "गैल्वेनोमीटर", "एम्पीयर"], ans: 1 },
+      { q: "अच्छे चालक का प्रतिरोध कितना होता है?", opts: ["बहुत अधिक", "बहुत कम", "मध्यम", "अनंत"], ans: 1 },
+      { q: "सबसे अच्छा चालक पदार्थ कौन सा है?", opts: ["सोना", "चांदी", "कॉपर", "एल्यूमिनियम"], ans: 1 },
+      { q: "तापमान बढ़ने पर चालक का प्रतिरोध क्या होता है?", opts: ["घटता है", "बढ़ता है", "मध्यम होता है", "कोई परिवर्तन नहीं"], ans: 1 },
+      { q: "तापमान बढ़ने पर अर्धचालक का प्रतिरोध क्या होता है?", opts: ["बढ़ता है", "घटता है", "मध्यम होता है", "कोई परिवर्तन नहीं"], ans: 1 },
+      { q: "कुचालक पदार्थ का प्रतिरोध कितना होता है?", opts: ["बहुत अधिक", "बहुत कम", "मध्यम", "अनंत"], ans: 0 },
+      { q: "प्रतिरोध को प्रभावित करने वाले मुख्य कारक कौन से हैं?", opts: ["लंबाई, क्षेत्रफल, प्रकृति, तापमान", "रंग, आकार, वजन, तापमान", "ऊष्मा, ऊर्जा, रंग, आकार", "ऊष्मा, लंबाई, धारा, वोल्टेज"], ans: 0 },
+      { q: "विशिष्ट प्रतिरोध की इकाई क्या है?", opts: ["ओम-मीटर", "ओम-सेंटीमीटर", "एम्पीयर-मीटर", "वोल्ट-मीटर"], ans: 0 },
+      { q: "प्रतिरोध के व्युत्क्रमानुपाती क्या है?", opts: ["धारा", "चालकता", "वोल्टेज", "ऊष्मा"], ans: 1 },
+      { q: "चालकता की इकाई क्या है?", opts: ["ओम", "सीमेंस", "एम्पीयर", "वोल्ट"], ans: 1 },
+      // Ohm's Law
+      { q: "ओम का नियम क्या बताता है?", opts: ["वोल्टेज, करंट और प्रतिरोध के बीच संबंध", "ऊष्मा और ऊर्जा का संबंध", "घनत्व का नियम", "ऊर्जा का प्रवाह"], ans: 0 },
+      { q: "ओम के नियम का सूत्र क्या है?", opts: ["V = I × R", "P = V × I", "V = W × Q", "I = Q / t"], ans: 0 },
+      { q: "यदि वोल्टेज स्थिर रहे और प्रतिरोध बढ़ जाए, तो धारा पर क्या प्रभाव पड़ेगा?", opts: ["धारा बढ़ जाएगी", "धारा घट जाएगी", "कोई परिवर्तन नहीं", "धारा अनंत होगी"], ans: 1 },
+      { q: "यदि प्रतिरोध स्थिर रहे और वोल्टेज बढ़ जाए, तो धारा पर क्या प्रभाव पड़ेगा?", opts: ["धारा बढ़ जाएगी", "धारा घट जाएगी", "कोई परिवर्तन नहीं", "धारा अनंत होगी"], ans: 0 },
+      { q: "ओम का नियम किस पर लागू नहीं होता है?", opts: ["धातु", "अर्धचालक", "चालक", "इंसुलेटर"], ans: 1 },
+      { q: "100 ओम के प्रतिरोधक में 2 एम्पीयर की धारा प्रवाहित होती है, तो वोल्टेज कितना होगा?", opts: ["50 V", "200 V", "100 V", "2 V"], ans: 1 },
+      { q: "12 वोल्ट के स्रोत से 3 एम्पीयर की धारा प्रवाहित होने पर प्रतिरोध कितना होगा?", opts: ["4 ओम", "36 ओम", "9 ओम", "8 ओम"], ans: 0 },
+      // Circuit, Power, Energy, Atom
+      { q: "श्रेणी परिपथ में क्या समान रहता है?", opts: ["वोल्टेज", "धारा", "पावर", "ऊष्मा"], ans: 1 },
+      { q: "समांतर परिपथ में क्या समान रहता है?", opts: ["वोल्टेज", "धारा", "पावर", "ऊष्मा"], ans: 0 },
+      { q: "विद्युत शक्ति (Electric Power) की इकाई क्या है?", opts: ["जूल", "वाट", "एम्पीयर", "ओम"], ans: 1 },
+      { q: "विद्युत ऊर्जा (Electric Energy) की इकाई क्या है?", opts: ["जूल", "वाट", "एम्पीयर", "ओम"], ans: 0 },
+      { q: "1 kWh किसके बराबर होता है?", opts: ["3600 जूल", "3.6 x 10^6 जूल", "360 जूल", "36 जूल"], ans: 1 },
+      { q: "परमाणु का केंद्रीय भाग क्या कहलाता है?", opts: ["इलेक्ट्रॉन", "नाभिक", "प्रोटॉन", "न्यूट्रॉन"], ans: 1 },
+      { q: "नाभिक में कौन से कण होते हैं?", opts: ["इलेक्ट्रॉन", "प्रोटॉन और न्यूट्रॉन", "प्रोटॉन और इलेक्ट्रॉन", "न्यूट्रॉन और इलेक्ट्रॉन"], ans: 1 },
+      { q: "प्रोटॉन पर कौन सा आवेश होता है?", opts: ["ऋणात्मक", "धनात्मक", "कोई आवेश नहीं", "दोनों"], ans: 1 },
+      { q: "न्यूट्रॉन पर कौन सा आवेश होता है?", opts: ["ऋणात्मक", "धनात्मक", "कोई आवेश नहीं", "दोनों"], ans: 2 },
+      { q: "एक बंद सर्किट में प्रतिरोध अनंत होने पर धारा कितनी होगी?", opts: ["बहुत अधिक", "बहुत कम", "शून्य", "अनंत"], ans: 2 },
+      { q: "शॉर्ट सर्किट होने पर परिपथ का प्रतिरोध कितना होता है?", opts: ["बहुत अधिक", "लगभग शून्य", "मध्यम", "अनंत"], ans: 1 },
+      { q: "शॉर्ट सर्किट में धारा का मान क्या होता है?", opts: ["बहुत अधिक", "बहुत कम", "मध्यम", "शून्य"], ans: 0 },
+      { q: "विद्युत शक्ति (P) ज्ञात करने का सूत्र क्या है?", opts: ["P = V × I", "P = V / R", "P = I / R", "P = I + R"], ans: 0 }
+    ];
+
+    let currQ = 0, score = 0, answers = [];
+    const totalQ = questions.length;
+    let timerInterval, timeLeft = 20*60; // 20 min for 50 Q
+
+    function formatTime(t) {
+      const m = Math.floor(t/60), s = t%60;
+      return `${m<10?'0':''}${m}:${s<10?'0':''}${s}`;
+    }
+
+    function startTimer() {
+      document.getElementById('timer').textContent = "समय: " + formatTime(timeLeft);
+      timerInterval = setInterval(()=>{
+        timeLeft--;
+        document.getElementById('timer').textContent = "समय: " + formatTime(timeLeft);
+        if(timeLeft<=0) {
+          clearInterval(timerInterval);
+          showResult();
+        }
+      },1000);
+    }
+
+    function updateProgressBar() {
+      const percent = ((currQ)/totalQ)*100;
+      document.getElementById('progress-bar').style.width = percent+"%";
+    }
+
+    function showQuestion() {
+      updateProgressBar();
+      if(currQ >= totalQ) {
+        showResult();
+        return;
+      }
+      const qObj = questions[currQ];
+      let html = `<div class="question-card">
+        <div style="font-size:1.15em;"><b>Q${currQ+1}:</b> ${qObj.q}</div>
+        <form id="optionsForm" class="options">`;
+      for(let i=0;i<qObj.opts.length;i++) {
+        html += `<input type="radio" id="opt${i}" name="option" value="${i}" style="display:none;">
+          <label for="opt${i}">${String.fromCharCode(65+i)}. ${qObj.opts[i]}</label>`;
+      }
+      html += `</form>
+        <button class="btn" id="nextBtn" disabled>अगला</button>
+      </div>`;
+      document.getElementById('test-section').innerHTML = html;
+
+      const form = document.getElementById('optionsForm');
+      form.addEventListener('change', ()=>{
+        document.getElementById('nextBtn').disabled = false;
+      });
+
+      document.getElementById('nextBtn').onclick = ()=>{
+        const selected = form.option.value;
+        answers[currQ] = Number(selected);
+        if(Number(selected)===qObj.ans) score++;
+        currQ++;
+        showQuestion();
+      };
+    }
+
+    function showResult() {
+      clearInterval(timerInterval);
+      document.getElementById('test-section').innerHTML = '';
+      document.getElementById('progress-bar').style.width = "100%";
+      document.getElementById('result-section').style.display = "block";
+      document.getElementById('score').textContent = `${score}/${totalQ}`;
+      let msg = '';
+      if(score>=35) msg = "बहुत अच्छा! आप विद्युत के सिद्धांतों में एक्सपर्ट हैं।";
+      else if(score>=25) msg = "अच्छा प्रयास! थोड़ा और अभ्यास करें।";
+      else msg = "अभ्यास की आवश्यकता है, कृपया पुनः प्रयास करें।";
+      document.getElementById('result-msg').textContent = msg;
+    }
+
+    document.getElementById('restart-btn').onclick = ()=>{
+      currQ=0; score=0; answers=[]; timeLeft=20*60;
+      document.getElementById('result-section').style.display = "none";
+      startTimer(); showQuestion();
+    };
+
+    startTimer();
+    showQuestion();
+  </script>
+</body>
+</html>
