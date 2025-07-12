@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>कैपेसिटर – प्रकार, प्रतिघात और अनुनाद – ITI इलेक्ट्रीशियन नोट्स</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS for design mirroring N3.html */
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>〰️ कैपेसिटर – प्रकार, प्रतिघात और अनुनाद</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. कैपेसिटर (Capacitor) और कैपेसिटेंस (Capacitance)</h2>
+      <p><strong>कैपेसिटर:</strong> यह एक निष्क्रिय (Passive) इलेक्ट्रॉनिक घटक है जो विद्युत ऊर्जा को एक विद्युत क्षेत्र (Electric Field) में संग्रहीत करता है।</p>
+      <p><strong>कैपेसिटेंस (C):</strong> यह कैपेसिटर की आवेश (Charge) संग्रहीत करने की क्षमता है। इसकी SI इकाई फैराड (Farad) है (F)।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ <strong>याद रखें:</strong>
+        <ul>
+          <li>कैपेसिटर DC (Direct Current) को ब्लॉक करता है।</li>
+          <li>कैपेसिटर AC (Alternating Current) को पास होने देता है।</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. कैपेसिटर के प्रकार (Types of Capacitors)</h2>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>प्रकार</th>
+            <th>विवरण</th>
+            <th>विशेषता</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>इलेक्ट्रोलाइटिक (Electrolytic)</strong></td>
+            <td>उच्च कैपेसिटेंस मान, ध्रुवीकृत (Polarized) होते हैं।</td>
+            <td>पावर सप्लाई में उपयोग होते हैं।</td>
+          </tr>
+          <tr>
+            <td><strong>सिरेमिक (Ceramic)</strong></td>
+            <td>कम मूल्य के, गैर-ध्रुवीकृत।</td>
+            <td>उच्च आवृत्ति वाले सर्किट में।</td>
+          </tr>
+          <tr>
+            <td><strong>पेपर (Paper)</strong></td>
+            <td>कम लागत, गैर-ध्रुवीकृत।</td>
+            <td>सामान्य इलेक्ट्रॉनिक सर्किट में।</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. कैपेसिटिव रिएक्टेंस ($X_C$)</h2>
+      <p>कैपेसिटिव रिएक्टेंस AC सर्किट में कैपेसिटर द्वारा करंट के प्रवाह के विरोध को मापता है। इसे ओम (Ohm) में मापा जाता है।</p>
+      <div class="formula">
+        $X_C = \frac{1}{2\pi fC}$
+      </div>
+      <p>जहाँ: $f$ = आवृत्ति (Frequency), $C$ = कैपेसिटेंस (Capacitance)</p>
+      <div class="other-points">
+        ✅ <strong>महत्वपूर्ण बिंदु:</strong>
+        <ul>
+          <li>कैपेसिटिव रिएक्टेंस आवृत्ति के विपरीत आनुपातिक होता है। ($X_C \propto 1/f$)</li>
+          <li>आवृत्ति बढ़ने पर $X_C$ घटता है, और करंट बढ़ता है।</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>4. कैपेसिटर का संयोजन (Connection)</h2>
+      <p>कैपेसिटर को सीरीज और पैरेलल में जोड़ा जा सकता है, लेकिन उनके कुल मान (Total Capacitance) की गणना प्रतिरोधकों (Resistors) के विपरीत होती है:</p>
+      <ul>
+        <li><strong>सीरीज (Series) में:</strong> कुल कैपेसिटेंस घटता है।
+          <div class="formula">
+            $1/C_{total} = 1/C_1 + 1/C_2 + ...$
+          </div>
+        </li>
+        <li><strong>पैरेलल (Parallel) में:</strong> कुल कैपेसिटेंस बढ़ता है।
+          <div class="formula">
+            $C_{total} = C_1 + C_2 + ...$
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>5. अनुनाद (Resonance)</h2>
+      <p>AC RLC (प्रतिरोधक, प्रेरक, कैपेसिटर) सर्किट में अनुनाद तब होता है जब कैपेसिटिव रिएक्टेंस ($X_C$) इंडक्टिव रिएक्टेंस ($X_L$) के बराबर होता है।</p>
+      <div class="formula">
+        $X_L = X_C$
+      </div>
+      <div class="other-points">
+        ✅ अनुनाद आवृत्ति (Resonance Frequency) पर, सर्किट का प्रतिबाधा (Impedance) न्यूनतम होता है (सीरीज रेजोनेंस में), और करंट अधिकतम होता है।
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 त्वरित अभ्यास प्रश्न (Quick Revision)</div>
+      <ol class="question-list">
+        <li>कैपेसिटेंस की SI इकाई क्या है?
+          <span class="answer">➡️ उत्तर: फैराड (Farad)</span>
+        </li>
+        <li>कैपेसिटर DC सर्किट में क्या करता है?
+          <span class="answer">➡️ उत्तर: DC को ब्लॉक करता है।</span>
+        </li>
+        <li>यदि कैपेसिटर को सीरीज में जोड़ा जाए, तो कुल कैपेसिटेंस क्या होगा?
+          <span class="answer">➡️ उत्तर: घट जाएगा।</span>
+        </li>
+        <li>कैपेसिटिव रिएक्टेंस ($X_C$) और आवृत्ति ($f$) के बीच क्या संबंध है?
+          <span class="answer">➡️ उत्तर: $X_C$ आवृत्ति के विपरीत आनुपातिक है।</span>
+        </li>
+        <li>अनुनाद (Resonance) की स्थिति कब होती है?
+          <span class="answer">➡️ उत्तर: जब $X_L = X_C$ हो।</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
