@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Earthing System and Protection - ITI Electrician</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rajdhani', Arial, sans-serif;
+      background: linear-gradient(135deg, #212547 0%, #6A4BC6 100%);
+      color: #f8f8fc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      letter-spacing: 0.2px;
+    }
+    header {
+      background: rgba(37, 29, 72, 0.95);
+      border-bottom: 3px solid #ffd700;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px #4b2788;
+      margin: 0;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    section {
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      max-width: 700px;
+      box-shadow: 0 8px 24px 0 rgba(80,30,160,0.18);
+      padding: 2rem 2rem 1.5rem 2rem;
+      border-left: 6px solid #ffd700;
+      border-right: 6px solid #6A4BC6;
+    }
+    .title-emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #ffd700;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .formula {
+      font-size: 1.15rem;
+      background: rgba(54, 54, 90, 0.22);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin: 0.7rem 0;
+      color: #ffd700;
+      font-family: 'Rajdhani', 'Courier New', monospace;
+      display: inline-block;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ffd70044;
+      padding: 0.45rem 0.6rem;
+      text-align: left;
+    }
+    .custom-table th {
+      background: rgba(80,30,160,0.18);
+      color: #ffd700;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .custom-table td {
+      background: rgba(255,255,255,0.03);
+      color: #f8f8fc;
+    }
+    .other-points {
+      background: rgba(120, 80, 220, 0.13);
+      border-left: 4px solid #ffd700;
+      border-radius: 9px;
+      padding: .7rem 1rem;
+      margin-bottom: .8rem;
+      font-weight: 500;
+    }
+    .question-section {
+      margin-top: 1.5rem;
+      background: rgba(44, 45, 80, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 2px 10px #2b1a49a8;
+      border-left: 4px solid #6A4BC6;
+      border-right: 4px solid #ffd700;
+    }
+    .question-title {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 2px 10px #4b2788;
+    }
+    .answer {
+      color: #49e168;
+      font-weight: 600;
+      margin-top: 2px;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      color: #ffd700;
+      background: rgba(37, 29, 72, 0.95);
+      border-top: 2px solid #ffd700;
+      margin-top: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg,#ffd700 0%,#6A4BC6 100%);
+      margin: 1.5rem 0;
+      opacity: .7;
+    }
+    @media (max-width: 780px) {
+      section {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+      }
+      .question-section {
+        padding: 1rem 0.5rem 0.8rem 0.5rem;
+      }
+      .custom-table th, .custom-table td {
+        font-size: 0.99rem;
+        padding: 0.32rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛡️ Earthing System and Protection</h1>
+    <p>ITI इलेक्ट्रीशियन ट्रेड थ्योरी • महत्वपूर्ण नोट्स</p>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="title-emoji">🔹</span>1. Earthing (अर्थिंग) - सिद्धांत और महत्व</h2>
+      <p>अर्थिंग एक सुरक्षा प्रक्रिया है जिसमें उपकरण के गैर-करंट ले जाने वाले धात्विक भागों को जमीन (Earth) से जोड़ा जाता है।</p>
+      <div class="other-points" style="margin-bottom:1rem;">
+        ✅ उद्देश्य और महत्व:
+      </div>
+      <ul>
+        <li><strong>सुरक्षा:</strong> यह व्यक्ति को बिजली के झटके (Electric Shock) से बचाता है।</li>
+        <li><strong>फॉल्ट करंट (Fault Current) को डिस्चार्ज करना:</strong> फॉल्ट होने पर, लीकेज करंट को जमीन में प्रवाहित करने के लिए कम प्रतिरोध (Low Resistance) वाला मार्ग प्रदान करता है।</li>
+        <li><strong>उपकरणों की सुरक्षा:</strong> यह उपकरणों को ओवर-करंट से होने वाले नुकसान से बचाता है।</li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>2. Types of Earthing (अर्थिंग के प्रकार)</h2>
+      <p>आईटीआई पाठ्यक्रम में दो मुख्य प्रकार की अर्थिंग प्रणालियां शामिल हैं।</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>प्रकार</th>
+            <th>विवरण</th>
+            <th>सामग्री</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pipe Earthing (पाइप अर्थिंग)</td>
+            <td>सबसे आम विधि, एक GI (Galvanized Iron) पाइप का उपयोग किया जाता है।</td>
+            <td>GI पाइप, नमक और चारकोल।</td>
+          </tr>
+          <tr>
+            <td>Plate Earthing (प्लेट अर्थिंग)</td>
+            <td>गहरे गड्ढे में तांबे (Copper) या GI प्लेट का उपयोग किया जाता है।</td>
+            <td>तांबे या GI प्लेट, नमक और चारकोल।</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="other-points">
+        ✅ <strong>महत्वपूर्ण:</strong> अर्थिंग प्रतिरोध (Earthing Resistance) कम (ideally 1 से 5 ओम) होना चाहिए।
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2><span class="title-emoji">🔹</span>3. Protection Devices (सुरक्षा उपकरण)</h2>
+      <p>ये उपकरण सर्किट को ओवरलोड, शॉर्ट सर्किट और अर्थ लीकेज से बचाते हैं।</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>उपकरण</th>
+            <th>मुख्य कार्य</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fuse (फ्यूज)</td>
+            <td>ओवरलोड या शॉर्ट सर्किट होने पर सर्किट को काट देता है।</td>
+          </tr>
+          <tr>
+            <td>MCB (Miniature Circuit Breaker)</td>
+            <td>ओवरलोड और शॉर्ट सर्किट दोनों से सुरक्षा। फ्यूज की तुलना में अधिक सुरक्षित।</td>
+          </tr>
+          <tr>
+            <td>ELCB (Earth Leakage Circuit Breaker)</td>
+            <td>अर्थ लीकेज करंट को डिटेक्ट करता है और सर्किट को ट्रिप करता है।</td>
+          </tr>
+          <tr>
+            <td>RCCB (Residual Current Circuit Breaker)</td>
+            <td>अधिक संवेदनशील, लीकेज करंट के विरुद्ध सुरक्षा (Electric Shock Protection)।</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="question-section">
+      <div class="question-title">📌 Quick Practice Questions (Revision के लिए)</div>
+      <ol class="question-list">
+        <li>अर्थिंग का मुख्य उद्देश्य क्या है?
+          <span class="answer">➡️ उत्तर: सुरक्षा और फॉल्ट करंट को जमीन में प्रवाहित करना।</span>
+        </li>
+        <li>पाइप अर्थिंग में कौन सी सामग्री का उपयोग किया जाता है?
+          <span class="answer">➡️ उत्तर: GI पाइप, नमक और चारकोल।</span>
+        </li>
+        <li>MCB का पूरा नाम क्या है?
+          <span class="answer">➡️ उत्तर: Miniature Circuit Breaker.</span>
+        </li>
+        <li>अर्थिंग का प्रतिरोध कितना होना चाहिए?
+          <span class="answer">➡️ उत्तर: कम (लगभग 1 से 5 ओम)।</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <div class="footer">
+    &copy; 2025 • Royal Summary Notes Guide<br>
+    Designed for futuristic learning • ज्ञान ही शक्ति है!
+  </div>
+</body>
+</html>
