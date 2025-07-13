@@ -100,3 +100,43 @@ function applyFallingEffect() {
 window.addEventListener('scroll', applyFallingEffect, { passive: true });
 window.addEventListener('resize', applyFallingEffect);
 window.addEventListener('DOMContentLoaded', applyFallingEffect);
+
+// typing text effect .typing-text//
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Target the element with the class 'typing-text'
+    const typingElement = document.querySelector('.typing-text');
+    
+    if (typingElement) {
+        // Store the original text content and trim any whitespace
+        const originalText = typingElement.textContent.trim();
+        // Clear the element's content to start the typing effect
+        typingElement.textContent = ''; 
+
+        // Function to implement the typing effect
+        function typeWriter(element, text, speed) {
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    // Append the next character to the element
+                    element.textContent += text.charAt(i);
+                    i++;
+                    // Call the function again after a delay (speed)
+                    setTimeout(type, speed);
+                }
+            }
+            
+            // Start the typing process
+            type();
+        }
+
+        // Execute the typing effect with a speed of 100 milliseconds per character
+        const typingSpeed = 100; 
+        typeWriter(typingElement, originalText, typingSpeed);
+    }
+});
+
+
+
