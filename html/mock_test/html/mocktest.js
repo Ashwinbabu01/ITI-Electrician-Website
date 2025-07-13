@@ -19,6 +19,12 @@ function formatTime(t) {
 
 // Timer
 function startTimer() {
+  // Ensure the timer element is visible when the quiz starts
+  const timerElement = document.getElementById('timer');
+  if (timerElement) {
+      timerElement.style.display = 'block';
+  }
+  
   document.getElementById('timer').textContent = "समय: " + formatTime(timeLeft);
   timerInterval = setInterval(()=>{
     timeLeft--;
@@ -63,14 +69,60 @@ function displayQuestionCount() {
     questionCountElement.style.padding = '10px 0';
     questionCountElement.style.textAlign = 'center';
     questionCountElement.style.fontWeight = 'bold';
-    questionCountElement.style.backgroundColor = '#f0f0f0';
+    // Enhanced color for better visibility (engaging color)
+    questionCountElement.style.backgroundColor = '#4CAF50'; // Green background
+    questionCountElement.style.color = '#fff'; // White text
     questionCountElement.style.borderRadius = '5px';
-    questionCountElement.style.marginBottom = '10px';
+    questionCountElement.style.marginBottom = '20px'; // Added margin for separation
     questionCountElement.textContent = `कुल प्रश्न: ${totalQ}`;
 
     if (header && header.parentNode) {
+        // Insert the question count below the header
         header.parentNode.insertBefore(questionCountElement, header.nextSibling);
     }
+}
+
+// Function to create and insert the Start button
+function createStartButton() {
+    const questionCountElement = document.getElementById('question-count-display');
+    
+    const startButton = document.createElement('button');
+    startButton.id = 'start-quiz-btn';
+    startButton.textContent = 'परीक्षा शुरू करें';
+    startButton.className = 'btn';
+    startButton.style.display = 'block';
+    startButton.style.margin = '20px auto';
+    startButton.style.padding = '10px 20px';
+    startButton.style.fontSize = '1.2em';
+    startButton.style.cursor = 'pointer';
+
+    // Insert the start button after the question count display
+    if (questionCountElement && questionCountElement.parentNode) {
+        questionCountElement.parentNode.insertBefore(startButton, questionCountElement.nextSibling);
+    }
+
+    // Add event listener to start the quiz
+    startButton.addEventListener('click', startQuiz);
+}
+
+// New function to start the quiz flow
+function startQuiz() {
+    // Hide the start button after click
+    const startButton = document.getElementById('start-quiz-btn');
+    if (startButton) {
+        startButton.style.display = 'none';
+    }
+
+    // Optionally hide the question count display after click
+    const questionCountElement = document.getElementById('question-count-display');
+    if (questionCountElement) {
+        // Hiding the question count display when quiz starts
+        questionCountElement.style.display = 'none'; 
+    }
+    
+    // Start the timer and show the first question
+    startTimer();
+    showQuestion();
 }
 
 function showQuestion() {
@@ -92,7 +144,7 @@ function showQuestion() {
   html += `</form>
     <button class="btn" id="nextBtn" disabled>अगला</button>
   </div>`;
-  // The MCQs are loaded into test-section. This was previously broken by moving progressBarBg.
+  // The MCQs are loaded into test-section. 
   document.getElementById('test-section').innerHTML = html;
 
   const form = document.getElementById('optionsForm');
@@ -151,33 +203,52 @@ document.getElementById('restart-btn').onclick = ()=>{
   // Clear status text on restart
   if (statusContainer) statusContainer.innerHTML = '';
   
-  // We can optionally clear the contents of the original progress bar containers 
-  // if they were used for visual bars (depends on the HTML/CSS setup)
   const progressBarBg = document.getElementById('progress-bar-bg');
   const progressBar = document.getElementById('progress-bar');
   if (progressBarBg) progressBarBg.textContent = ''; 
   if (progressBar) progressBar.style.display = 'block'; 
 
-  startTimer(); 
-  showQuestion();
+  // Resetting to the 'Start' state
+  const startButton = document.getElementById('start-quiz-btn');
+  const questionCountElement = document.getElementById('question-count-display');
+  
+  if (startButton) {
+      startButton.style.display = 'block';
+  }
+  if (questionCountElement) {
+      questionCountElement.style.display = 'block';
+  }
+  
+  // Hide the test section and timer until 'Start' is pressed again
+  document.getElementById('test-section').innerHTML = '';
+  const timerElement = document.getElementById('timer');
+  if (timerElement) {
+    timerElement.style.display = 'none';
+  }
 };
 
 // Initial setup and DOM manipulation
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Display the total question count below the header
+    // 1. Display the total question count and create the start button
     displayQuestionCount();
+    createStartButton();
 
-    // 2. Make the Timer Fixed
+    // 2. Make the Timer Fixed and enhance its color
     const timerElement = document.getElementById('timer');
     if (timerElement) {
-        timerElement.style.position = 'fixed';
+        // This is the line that keeps the timer in place while the rest of the content scrolls
+        timerElement.style.position = 'fixed'; 
         timerElement.style.top = '10px';
         timerElement.style.right = '10px';
-        timerElement.style.backgroundColor = '#fff';
+        // Enhanced color for visibility
+        timerElement.style.backgroundColor = '#FFC107'; // Amber/Orange background
+        timerElement.style.color = '#000'; // Black text
         timerElement.style.padding = '5px 10px';
-        timerElement.style.zIndex = '1000'; 
+        timerElement.style.zIndex = '1000'; // Ensure it stays above other content
         timerElement.style.border = '1px solid #ccc';
         timerElement.style.borderRadius = '5px';
+        // Initially hide the timer until the 'Start' button is pressed
+        timerElement.style.display = 'none'; 
     }
 
     // 3. Create and position the dedicated status container above the footer
@@ -192,7 +263,5 @@ document.addEventListener('DOMContentLoaded', () => {
         statusContainer.style.position = 'relative'; // Ensure proper positioning
     }
 
-    // 4. Start the test flow
-    startTimer();
-    showQuestion();
+    // NOTE: The test flow (startTimer and showQuestion) is initiated only by clicking the 'Start' button (via startQuiz function).
 });
