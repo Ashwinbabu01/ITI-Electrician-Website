@@ -1,9 +1,15 @@
+// The JavaScript code fixed to restore the display of MCQs and other content, 
+// while keeping the requested features (fixed timer, total questions count, and status display above the footer).
+
 let currQ = 0, score = 0, answers = [];
 const totalQ = questions.length; // Accessing 'questions' defined in index.html
 
 // Set time to half minute per question
 let timerInterval;
 let timeLeft = Math.floor(totalQ * 0.5 * 60); // 0.5 min per question, in seconds
+
+// --- Global variable for the dedicated status container near the footer ---
+let statusContainer; 
 
 // Format time mm:ss
 function formatTime(t) {
@@ -24,14 +30,53 @@ function startTimer() {
   },1000);
 }
 
-// Progress bar
-function updateProgressBar() {
-  const percent = ((currQ)/totalQ)*100;
-  document.getElementById('progress-bar').style.width = percent+"%";
+// Function to update Question Status with Attempted, Remaining, Correct, and Incorrect counts
+// This function now updates the 'statusContainer' element inserted above the footer.
+function updateQuestionStatus() {
+  const attempted = currQ;
+  const remaining = totalQ - currQ;
+  const correct = score;
+  const incorrect = attempted - correct;
+
+  // Format the status text including all requested information
+  const statusText = `
+    Questions's Status: ${attempted} Attempted, ${remaining} Remaining<br>
+    correct: ${correct}, incorrect: ${incorrect}
+  `;
+  
+  // Update the HTML content of the dedicated status container (if it exists)
+  if (statusContainer) {
+    statusContainer.innerHTML = statusText;
+    
+    // Add/maintain basic styling for visibility
+    statusContainer.style.textAlign = 'center';
+    statusContainer.style.fontWeight = 'bold';
+    statusContainer.style.padding = '10px 0';
+  }
+}
+
+// Display Total Question Count 
+function displayQuestionCount() {
+    const header = document.querySelector('.container h1');
+    const questionCountElement = document.createElement('div');
+    questionCountElement.id = 'question-count-display';
+    questionCountElement.style.padding = '10px 0';
+    questionCountElement.style.textAlign = 'center';
+    questionCountElement.style.fontWeight = 'bold';
+    questionCountElement.style.backgroundColor = '#f0f0f0';
+    questionCountElement.style.borderRadius = '5px';
+    questionCountElement.style.marginBottom = '10px';
+    questionCountElement.textContent = `कुल प्रश्न: ${totalQ}`;
+
+    if (header && header.parentNode) {
+        header.parentNode.insertBefore(questionCountElement, header.nextSibling);
+    }
 }
 
 function showQuestion() {
-  updateProgressBar();
+  // Call the status update function
+  updateQuestionStatus();
+
   if(currQ >= totalQ) {
     showResult();
     return;
@@ -47,6 +92,7 @@ function showQuestion() {
   html += `</form>
     <button class="btn" id="nextBtn" disabled>अगला</button>
   </div>`;
+  // The MCQs are loaded into test-section. This was previously broken by moving progressBarBg.
   document.getElementById('test-section').innerHTML = html;
 
   const form = document.getElementById('optionsForm');
@@ -84,7 +130,10 @@ function showQuestion() {
 function showResult() {
   clearInterval(timerInterval);
   document.getElementById('test-section').innerHTML = '';
-  document.getElementById('progress-bar').style.width = "100%";
+  
+  // Update the status display one last time
+  updateQuestionStatus(); 
+
   document.getElementById('result-section').style.display = "block";
   document.getElementById('score').textContent = `${score}/${totalQ}`;
   let msg = '';
@@ -96,12 +145,54 @@ function showResult() {
 
 document.getElementById('restart-btn').onclick = ()=>{
   currQ=0; score=0; answers=[];
-  timeLeft = Math.floor(totalQ * 0.5 * 60); // Reset timer dynamically
+  timeLeft = Math.floor(totalQ * 0.5 * 60);
   document.getElementById('result-section').style.display = "none";
-  startTimer(); showQuestion();
+  
+  // Clear status text on restart
+  if (statusContainer) statusContainer.innerHTML = '';
+  
+  // We can optionally clear the contents of the original progress bar containers 
+  // if they were used for visual bars (depends on the HTML/CSS setup)
+  const progressBarBg = document.getElementById('progress-bar-bg');
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBarBg) progressBarBg.textContent = ''; 
+  if (progressBar) progressBar.style.display = 'block'; 
+
+  startTimer(); 
+  showQuestion();
 };
 
-// Initial
-// The script runs immediately after the HTML content (including the 'questions' variable) is loaded.
-startTimer();
-showQuestion();
+// Initial setup and DOM manipulation
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Display the total question count below the header
+    displayQuestionCount();
+
+    // 2. Make the Timer Fixed
+    const timerElement = document.getElementById('timer');
+    if (timerElement) {
+        timerElement.style.position = 'fixed';
+        timerElement.style.top = '10px';
+        timerElement.style.right = '10px';
+        timerElement.style.backgroundColor = '#fff';
+        timerElement.style.padding = '5px 10px';
+        timerElement.style.zIndex = '1000'; 
+        timerElement.style.border = '1px solid #ccc';
+        timerElement.style.borderRadius = '5px';
+    }
+
+    // 3. Create and position the dedicated status container above the footer
+    statusContainer = document.createElement('div');
+    statusContainer.id = 'question-status-footer';
+    
+    const footer = document.querySelector('footer');
+
+    if (statusContainer && footer) {
+        // Insert the new status element just before the footer
+        footer.parentNode.insertBefore(statusContainer, footer);
+        statusContainer.style.position = 'relative'; // Ensure proper positioning
+    }
+
+    // 4. Start the test flow
+    startTimer();
+    showQuestion();
+});
