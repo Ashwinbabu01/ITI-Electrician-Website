@@ -3,9 +3,10 @@
     display:flex;
     justify-content:center;
     align-item:center;
-    margin-top:10px;
+    margin-top: 10px;;
 }
 .futuristic-button {
+    margin-top: 10px;
     background: linear-gradient(45deg, #0f0f2a, #2a0f2a);
     border: 2px solid #6a058d;
     border-radius: 15px;
