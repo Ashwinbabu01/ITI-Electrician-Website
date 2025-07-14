@@ -1,4 +1,9 @@
 /*Roadmap button */
+.btn-center{
+    display:flex;
+    justify-content:center;
+    align-item:center;
+}
 .futuristic-button {
     background: linear-gradient(45deg, #0f0f2a, #2a0f2a);
     border: 2px solid #6a058d;
