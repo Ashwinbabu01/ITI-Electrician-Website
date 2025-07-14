@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITI Electrician 1st Year CBT Exam Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Variables & Global Styles --- */
+        :root {
+            --bg-dark: #0A0A1A;
+            --primary-color: #00BFA5; /* Teal/Cyan */
+            --secondary-color: #FFD700; /* Gold */
+            --accent-color: #4B0082; /* Deep Purple */
+            --text-light: #E0E0E0;
+            --card-bg: rgba(25, 25, 45, 0.8);
+            --card-border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Typing Effect --- */
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #1A1A3A 100%);
+            position: relative;
+        }
+
+        .header-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 20px var(--primary-color);
+            min-height: 1.2em; /* Ensure space for typing text */
+        }
+
+        /* Typing effect cursor */
+        .typing-cursor {
+            display: inline-block;
+            border-right: 3px solid var(--secondary-color);
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--secondary-color); }
+        }
+
+        .header-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+
+        /* --- Main Content Structure --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Scroll Transition Effect (Fade-in and Slide-up) */
+        .section-container {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section-container.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+            position: relative;
+        }
+
+        /* --- 3D Card Style & Readability --- */
+        .card {
+            background: var(--card-bg);
+            border: var(--card-border);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px var(--primary-color);
+        }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .card li:before {
+            content: '⚡'; /* Futuristic bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* --- Exam Overview Section --- */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .exam-table-container {
+            margin-top: 30px;
+        }
+
+        .exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .exam-table th, .exam-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .exam-table th {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* --- Horizontal Roadmap (Trade Theory) --- */
+        #trade-theory-roadmap .card {
+            background: var(--card-bg);
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding: 30px 0;
+            scroll-behavior: smooth;
+            /* Hide scrollbar visually but keep functionality */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .roadmap-node {
+            min-width: 320px;
+            margin-right: 40px;
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--card-bg);
+            transition: transform 0.5s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .roadmap-node:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .roadmap-node h4 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Top Focus Areas --- */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .focus-item {
+            background: rgba(0, 191, 165, 0.1);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 191, 165, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .focus-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .roadmap-node {
+                min-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title" id="typing-header">
+            <span class="typing-cursor"></span>
+        </div>
+        <p class="header-subtitle">Your Study Roadmap for the ITI Electrician 1st Year CBT Exam</p>
+    </header>
+
+    <main class="container">
+
+        <section id="exam-overview" class="section-container">
+            <h2>Exam Overview and Format</h2>
+            <div class="overview-grid">
+                
+                <div class="card">
+                    <h3>Exam Composition</h3>
+                    <p>The CBT exam primarily focuses on Trade Theory, supplemented by Employability Skills and Workshop Calculation & Science.</p>
+                    <ul>
+                        <li>Approximately 70% of questions are from Trade Theory.</li>
+                        <li>Approximately 30% of questions are from Employability Skills and Workshop Calculation & Science.</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>ITI Electrician 1st Year CBT Format</h3>
+                    <div class="exam-table-container">
+                        <table class="exam-table">
+                            <thead>
+                                <tr>
+                                    <th>Section</th>
+                                    <th>Questions (Approx.)</th>
+                                    <th>Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Trade Theory</td>
+                                    <td>35 - 40</td>
+                                    <td>70 - 80</td>
+                                </tr>
+                                <tr>
+                                    <td>Workshop Cal & Science</td>
+                                    <td>10 - 15</td>
+                                    <td>20 - 30</td>
+                                </tr>
+                                <tr>
+                                    <td>Employability Skills</td>
+                                    <td>10 - 15</td>
+                                    <td>20 - 30</td>
+                                </tr>
+                                <tr>
+                                    <th>TOTAL</th>
+                                    <th>60 - 70 MCQs</th>
+                                    <th>100 marks</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trade-theory-roadmap" class="section-container">
+            <h2>Trade Theory: Most Important Chapters</h2>
+            <p style="text-align: center; margin-bottom: 20px; font-style: italic; color: var(--secondary-color);">Scroll horizontally to navigate the Trade Theory roadmap.</p>
+            
+            <div class="horizontal-scroll">
+                
+                <div class="roadmap-node card">
+                    <h4>1. Basic Electrical</h4>
+                    <ul>
+                        <li>Ohm's Law, Voltage, Current, Resistance, Power</li>
+                        <li>Focus on Direct formula-based MCQs.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-node card">
+                    <h4>2. Electrical Circuit</h4>
+                    <ul>
+                        <li>Series, Parallel Circuits, KVL, KCL</li>
+                        <li>Focus on Numericals and Concepts.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-node card">
+                    <h4>3. Magnetism & Electromagnetism</h4>
+                    <ul>
+                        <li>Magnetic field, Fleming's rules, Solenoid, EMF</li>
+                        <li>Focus on Theory and Principle-based questions.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-node card">
+                    <h4>4. DC Machines</h4>
+                    <ul>
+                        <li>DC Motor/Generator - Parts, Working, Application</li>
+                        <li>Focus on Matching and Function questions.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-node card">
+                    <h4>5. Electrical Safety</h4>
+                    <ul>
+                        <li>Fuse, MCB, Earthing types, Safety signs</li>
+                        <li>Focus on Real-life based MCQs.</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-node card">
+                    <h4>6. Measuring Instruments</h4>
+                    <ul>
+                        <li>Multimeter, Ammeter, Voltmeter, Clamp meter</li>
+                        <li>Focus on Identification and Use.</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-node card">
+                    <h4>7. Wiring System</h4>
+                    <ul>
+                        <li>Wiring types, Tools, Connections</li>
+                        <li>Focus on Diagram-based questions.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="auxiliary-subjects" class="section-container">
+            <h2>Workshop Calculation & Science and Employability Skills</h2>
+            <div class="overview-grid">
+                
+                <div class="card">
+                    <h3>Workshop Calculation & Science</h3>
+                    <p>Important topics for CBT:</p>
+                    <ul>
+                        <li>Units & Measurements</li>
+                        <li>Ohm's Law Numericals</li>
+                        <li>Power & Energy: kWh, Watt, Horsepower</li>
+                        <li>Mensuration: Area, Volume (Box, Pipe)</li>
+                        <li>Trigonometry, Work, Energy, Force</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Employability Skills</h3>
+                    <p>CBT mein pooche jaane wale topics:</p>
+                    <ul>
+                        <li>English Basics: Grammar, Sentence Correction</li>
+                        <li>IT Basics: MS Office, Email, Internet</li>
+                        <li>Communication: Verbal, Written, Listening</li>
+                        <li>Environment & Safety: 3Rs, Pollution</li>
+                        <li>Entrepreneurship: Self-employment</li>
+                        <li>Labour Laws: Minimum Wages Act</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-focus-areas" class="section-container">
+            <h2>Top Focus Areas for CBT</h2>
+            <div class="focus-grid card">
+                <div class="focus-item">Ohm's Law & Power Formula</div>
+                <div class="focus-item">Unit conversion</div>
+                <div class="focus-item">Safety devices: Fuse, MCB, ELCB, Earthing</div>
+                <div class="focus-item">DC Motor vs Generator</div>
+                <div class="focus-item">Magnetism rules (Fleming's Left & Right)</div>
+                <div class="focus-item">Multimeter parts and usage</div>
+                <div class="focus-item">Types of wiring (Cleat, Batten, Conduit)</div>
+                <div class="focus-item">Basic IT and Entrepreneurship (for ES)</div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- JavaScript for Typing Effect ---
+        const typingText = "ITI Electrician 1st Year CBT Exam Guide";
+        const typingElement = document.getElementById('typing-header');
+        const cursor = typingElement.querySelector('.typing-cursor');
+        let i = 0;
+        const speed = 70; // Typing speed in milliseconds
+
+        function typeWriter() {
+            if (i < typingText.length) {
+                // We insert the typed character before the cursor
+                cursor.insertAdjacentText('beforebegin', typingText.charAt(i));
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                // Hide cursor after typing is complete
+                cursor.style.display = 'none';
+            }
+        }
+
+        // Start typing effect on load
+        window.onload = () => {
+            // Wait a moment for the initial styles to render
+            setTimeout(typeWriter, 500);
+        };
+
+        // --- JavaScript for Scroll Animations (IntersectionObserver) ---
+        const sections = document.querySelectorAll('.section-container');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 20% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    // Optional: stop observing once animated
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add 'animate' class to the first section immediately if it's already in view
+        if (sections[0]) {
+            sections[0].classList.add('animate');
+        }
+    </script>
+</body>
+</html>
