@@ -136,7 +136,3 @@ document.addEventListener('DOMContentLoaded', () => {
         typeWriter(typingElement, originalText, typingSpeed);
     }
 });
-// roadmap button 
-document.querySelector('.futuristic-button').addEventListener('click', () => {
-            alert('Roadmap button clicked!');
-        });
