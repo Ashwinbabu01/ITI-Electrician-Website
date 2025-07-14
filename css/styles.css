@@ -1,3 +1,92 @@
+/*Roadmap button */
+.futuristic-button {
+    background: linear-gradient(45deg, #0f0f2a, #2a0f2a);
+    border: 2px solid #6a058d;
+    border-radius: 15px;
+    padding: 15px 40px;
+    color: #a0a0ff;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(106, 5, 141, 0.7), inset 0 0 10px rgba(160, 160, 255, 0.3);
+    outline: none;
+    text-align: center;
+}
+
+.futuristic-button:hover {
+    background: linear-gradient(45deg, #2a0f2a, #0f0f2a);
+    border-color: #a0a0ff;
+    color: #fff;
+    box-shadow: 0 0 25px rgba(160, 160, 255, 0.9), inset 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.futuristic-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 0 10px rgba(106, 5, 141, 0.5), inset 0 0 5px rgba(160, 160, 255, 0.2);
+}
+
+.button-text {
+    position: relative;
+    z-index: 2; /* Ensures text is above stars */
+}
+
+/* Star styles */
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: blink 1.5s infinite ease-out;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    z-index: 1; /* Stars below text but above button background */
+}
+
+.star-1 {
+    width: 4px;
+    height: 4px;
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    width: 3px;
+    height: 3px;
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+.star-3 {
+    width: 5px;
+    height: 5px;
+    top: 30%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+.star-4 {
+    width: 3px;
+    height: 3px;
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 0.2s;
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+
+
 .size{
   font-size: 25px;
   font-weight: bold;
